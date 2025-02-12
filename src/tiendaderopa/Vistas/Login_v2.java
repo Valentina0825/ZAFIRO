@@ -136,11 +136,17 @@ public class Login_v2 extends javax.swing.JPanel {
         btn_ingresar.setLayout(btn_ingresarLayout);
         btn_ingresarLayout.setHorizontalGroup(
             btn_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txt_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(btn_ingresarLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(txt_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         btn_ingresarLayout.setVerticalGroup(
             btn_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txt_ingresar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addGroup(btn_ingresarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txt_ingresar, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         alertaC1.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
@@ -161,7 +167,9 @@ public class Login_v2 extends javax.swing.JPanel {
                     .addComponent(nom_corr, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
                     .addComponent(separadorC)
                     .addComponent(contrasena)
-                    .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(fondo_formLayout.createSequentialGroup()
+                        .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80))
                     .addComponent(alertaC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(alertaUC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(alertaC1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -180,7 +188,7 @@ public class Login_v2 extends javax.swing.JPanel {
                 .addComponent(separadorNC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alertaUC)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(tit_contra)
                 .addGap(18, 18, 18)
                 .addComponent(contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -190,9 +198,9 @@ public class Login_v2 extends javax.swing.JPanel {
                 .addComponent(alertaC)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alertaC1)
-                .addGap(53, 53, 53)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addGap(101, 101, 101))
         );
 
         add(fondo_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 650));
@@ -201,7 +209,7 @@ public class Login_v2 extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, -1, 110));
 
         imagen_modelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/foto_modelo2.jpg"))); // NOI18N
-        add(imagen_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, -160, 780, -1));
+        add(imagen_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 690, 650));
     }// </editor-fold>//GEN-END:initComponents
 
     private void nom_corrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_corrActionPerformed

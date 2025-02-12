@@ -27,7 +27,7 @@ public class TiendaDeRopa extends JFrame{
         
         this.setTitle("ZAFIRO");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        /*this.setSize(1300, 650);*/ this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setSize(1300, 650); /*this.setExtendedState(JFrame.MAXIMIZED_BOTH); */
         //this.setLayout(new BorderLayout());
         
         Login_v2 index = new Login_v2();
