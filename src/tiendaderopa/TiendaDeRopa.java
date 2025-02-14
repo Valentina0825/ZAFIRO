@@ -6,10 +6,11 @@ package tiendaderopa;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import tiendaderopa.Modelos.Conexion;
 import tiendaderopa.Vistas.Login;
-import tiendaderopa.Vistas.Login_v2;
-import tiendaderopa.Vistas.Home;
-import tiendaderopa.Vistas.RegUsuarios;
+import tiendaderopa.Vistas.HomeC;
+import tiendaderopa.Vistas.RegUsuario;
+
 
 /**
  *
@@ -30,9 +31,9 @@ public class TiendaDeRopa extends JFrame{
         /*this.setSize(1300, 650);*/ this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //this.setLayout(new BorderLayout());
         
-        Login_v2 index = new Login_v2();
+        RegUsuario pagina = new RegUsuario();
         
-        this.add(index);
+        this.add(pagina);
         
         this.setVisible(true);
     
@@ -40,7 +41,9 @@ public class TiendaDeRopa extends JFrame{
     
     public static void main(String[] args) {
         // TODO code application logic here
-        SwingUtilities.invokeLater(() -> new TiendaDeRopa());
+//        SwingUtilities.invokeLater(() -> new TiendaDeRopa());
+        Conexion conex = new Conexion();
+        conex.getConection();
     }
     
 }
