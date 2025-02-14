@@ -1,17 +1,19 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package tiendaderopa.Vistas;
+
+import java.awt.Color;
 
 /**
  *
  * @author valen
  */
-public class Login extends javax.swing.JFrame {
+public class Login extends javax.swing.JPanel {
 
     /**
-     * Creates new form Login
+     * Creates new form Login_v2
      */
     public Login() {
         initComponents();
@@ -26,36 +28,29 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        fondo = new javax.swing.JPanel();
         fondo_form = new javax.swing.JPanel();
         inicio_S = new javax.swing.JLabel();
         tit_uc = new javax.swing.JLabel();
-        nom_corr1 = new javax.swing.JTextField();
-        separador1 = new javax.swing.JSeparator();
+        nom_corr = new javax.swing.JTextField();
+        separadorNC = new javax.swing.JSeparator();
         tit_contra = new javax.swing.JLabel();
-        Separador2 = new javax.swing.JSeparator();
+        separadorC = new javax.swing.JSeparator();
+        alertaUC = new javax.swing.JLabel();
         contrasena = new javax.swing.JPasswordField();
+        alertaC = new javax.swing.JLabel();
         btn_ingresar = new javax.swing.JPanel();
         txt_ingresar = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        alertaC1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         imagen_modelo = new javax.swing.JLabel();
 
-        jLabel1.setText("jLabel1");
-
-        jLabel2.setText("jLabel2");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1300, 650));
-
-        fondo.setBackground(new java.awt.Color(204, 204, 255));
-        fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(0, 0, 0));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         fondo_form.setBackground(new java.awt.Color(0, 0, 51));
         fondo_form.setPreferredSize(new java.awt.Dimension(660, 650));
 
-        inicio_S.setFont(new java.awt.Font("SimSun", 1, 50)); // NOI18N
+        inicio_S.setFont(new java.awt.Font("Sylfaen", 1, 50)); // NOI18N
         inicio_S.setForeground(new java.awt.Color(255, 255, 255));
         inicio_S.setText("INICIO DE SESIÓN");
 
@@ -63,33 +58,60 @@ public class Login extends javax.swing.JFrame {
         tit_uc.setForeground(new java.awt.Color(255, 255, 255));
         tit_uc.setText("USUARIO  ");
 
-        nom_corr1.setBackground(new java.awt.Color(0, 0, 51));
-        nom_corr1.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        nom_corr1.setForeground(new java.awt.Color(204, 204, 204));
-        nom_corr1.setText("Ingrese su nombre de usuario o correo electronico");
-        nom_corr1.setBorder(null);
-        nom_corr1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_corr1ActionPerformed(evt);
+        nom_corr.setBackground(new java.awt.Color(0, 0, 51));
+        nom_corr.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        nom_corr.setForeground(new java.awt.Color(153, 153, 153));
+        nom_corr.setText("Ingrese su nombre de usuario");
+        nom_corr.setBorder(null);
+        nom_corr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                nom_corrMousePressed(evt);
             }
         });
+        nom_corr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nom_corrActionPerformed(evt);
+            }
+        });
+
+        separadorNC.setBackground(new java.awt.Color(153, 153, 153));
+        separadorNC.setForeground(new java.awt.Color(153, 153, 153));
 
         tit_contra.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
         tit_contra.setForeground(new java.awt.Color(255, 255, 255));
         tit_contra.setText("CONTRASEÑA");
 
+        separadorC.setBackground(new java.awt.Color(153, 153, 153));
+        separadorC.setForeground(new java.awt.Color(153, 153, 153));
+
+        alertaUC.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
+        alertaUC.setForeground(new java.awt.Color(0, 0, 51));
+        alertaUC.setText("Alerta Usuario / Correo");
+
         contrasena.setBackground(new java.awt.Color(0, 0, 51));
         contrasena.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        contrasena.setForeground(new java.awt.Color(204, 204, 204));
+        contrasena.setForeground(new java.awt.Color(153, 153, 153));
         contrasena.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         contrasena.setText("Ingrese su contraseña");
         contrasena.setBorder(null);
+        contrasena.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                contrasenaMousePressed(evt);
+            }
+        });
+
+        alertaC.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
+        alertaC.setForeground(new java.awt.Color(0, 0, 51));
+        alertaC.setText("Alerta contraseña");
 
         btn_ingresar.setBackground(new java.awt.Color(255, 255, 255));
         btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_ingresarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_ingresarMouseExited(evt);
             }
         });
 
@@ -99,8 +121,14 @@ public class Login extends javax.swing.JFrame {
         txt_ingresar.setText("INGRESAR");
         txt_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         txt_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_ingresarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txt_ingresarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txt_ingresarMouseExited(evt);
             }
         });
 
@@ -108,12 +136,16 @@ public class Login extends javax.swing.JFrame {
         btn_ingresar.setLayout(btn_ingresarLayout);
         btn_ingresarLayout.setHorizontalGroup(
             btn_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txt_ingresar, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+            .addComponent(txt_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         btn_ingresarLayout.setVerticalGroup(
             btn_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txt_ingresar, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(txt_ingresar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
+
+        alertaC1.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
+        alertaC1.setForeground(new java.awt.Color(0, 0, 51));
+        alertaC1.setText("Alerta contraseña");
 
         javax.swing.GroupLayout fondo_formLayout = new javax.swing.GroupLayout(fondo_form);
         fondo_form.setLayout(fondo_formLayout);
@@ -121,126 +153,126 @@ public class Login extends javax.swing.JFrame {
             fondo_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondo_formLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(fondo_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(fondo_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(tit_contra)
-                        .addComponent(tit_uc)
-                        .addComponent(inicio_S)
-                        .addComponent(separador1)
-                        .addComponent(nom_corr1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
-                        .addComponent(Separador2)
-                        .addComponent(contrasena))
-                    .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(fondo_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tit_contra)
+                    .addComponent(tit_uc)
+                    .addComponent(inicio_S)
+                    .addComponent(separadorNC)
+                    .addComponent(nom_corr, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+                    .addComponent(separadorC)
+                    .addComponent(contrasena)
+                    .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(alertaC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(alertaUC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(alertaC1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         fondo_formLayout.setVerticalGroup(
             fondo_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondo_formLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addGap(60, 60, 60)
                 .addComponent(inicio_S, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(tit_uc)
                 .addGap(18, 18, 18)
-                .addComponent(nom_corr1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nom_corr, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(separador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addComponent(separadorNC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alertaUC)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(tit_contra)
                 .addGap(18, 18, 18)
                 .addComponent(contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Separador2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addComponent(separadorC, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alertaC)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alertaC1)
+                .addGap(53, 53, 53)
                 .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
         );
 
-        fondo.add(fondo_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 660, 670));
+        add(fondo_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 650));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/zafiroo.png"))); // NOI18N
-        fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/logo_zafiro.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, -1, 110));
 
         imagen_modelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/foto_modelo2.jpg"))); // NOI18N
-        fondo.add(imagen_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, -160, 780, -1));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        pack();
+        add(imagen_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, -160, 780, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nom_corr1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_corr1ActionPerformed
+    private void nom_corrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_corrActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nom_corr1ActionPerformed
+    }//GEN-LAST:event_nom_corrActionPerformed
 
     private void txt_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_ingresarMouseEntered
-        txt_ingresar.setBackground(new java.awt.Color(195,195,195)); // Color morado
-        txt_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_ingresar.setBackground(new java.awt.Color(195,195,195)); // Color gris
     }//GEN-LAST:event_txt_ingresarMouseEntered
 
     private void btn_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseEntered
-        txt_ingresar.setBackground(new java.awt.Color(195,195,195)); // Color gris
-        txt_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+       btn_ingresar.setBackground(new java.awt.Color(195,195,195)); // Color gris
     }//GEN-LAST:event_btn_ingresarMouseEntered
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btn_ingresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseExited
+        // TODO add your handling code here:
+        btn_ingresar.setBackground(new java.awt.Color(255,255,255)); // Color blanco
+    }//GEN-LAST:event_btn_ingresarMouseExited
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
-    }
+    private void txt_ingresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_ingresarMouseExited
+        // TODO add your handling code here:
+        btn_ingresar.setBackground(new java.awt.Color(255,255,255)); // Color blanco
+    }//GEN-LAST:event_txt_ingresarMouseExited
+
+    private void nom_corrMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nom_corrMousePressed
+        // TODO add your handling code here:
+        if(nom_corr.getText().equals("Ingrese su nombre de usuario o correo electronico")){
+            nom_corr.setText("");
+            nom_corr.setForeground(Color.white);
+            separadorNC.setForeground(Color.white);
+        }
+        if(String.valueOf(contrasena.getPassword()).isEmpty()){
+            contrasena.setText("Ingrese su contraseña");
+            contrasena.setForeground(Color.GRAY);
+            separadorC.setForeground(Color.GRAY);
+        }
+    }//GEN-LAST:event_nom_corrMousePressed
+
+    private void contrasenaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contrasenaMousePressed
+        // TODO add your handling code here:
+        if(nom_corr.getText().isEmpty()){
+            nom_corr.setText("Ingrese su nombre de usuario o correo electronico");
+            nom_corr.setForeground(Color.GRAY);
+            separadorNC.setForeground(Color.GRAY);
+        }
+        if(String.valueOf(contrasena.getPassword()).equals("Ingrese su contraseña")){
+            contrasena.setText("");
+            contrasena.setForeground(Color.white);
+            separadorC.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_contrasenaMousePressed
+
+    private void txt_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_ingresarMouseClicked
+        // TODO add your handling code here:
+        javax.swing.JOptionPane.showMessageDialog(this,"credencial de ingreso: " + nom_corr.getText() + "\n Contraseña: " + String.valueOf( contrasena.getPassword()));
+    }//GEN-LAST:event_txt_ingresarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSeparator Separador2;
+    private javax.swing.JLabel alertaC;
+    private javax.swing.JLabel alertaC1;
+    private javax.swing.JLabel alertaUC;
     private javax.swing.JPanel btn_ingresar;
     private javax.swing.JPasswordField contrasena;
-    private javax.swing.JPanel fondo;
     private javax.swing.JPanel fondo_form;
     private javax.swing.JLabel imagen_modelo;
     private javax.swing.JLabel inicio_S;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField nom_corr1;
-    private javax.swing.JSeparator separador1;
+    private javax.swing.JTextField nom_corr;
+    private javax.swing.JSeparator separadorC;
+    private javax.swing.JSeparator separadorNC;
     private javax.swing.JLabel tit_contra;
     private javax.swing.JLabel tit_uc;
     private javax.swing.JLabel txt_ingresar;
