@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package tiendaderopa.Vistas;
-
+import javax.swing.*;
 /**
  *
  * @author valen
@@ -50,6 +50,11 @@ public class NavBarNL extends javax.swing.JPanel {
         txt_ingresar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         txt_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         txt_ingresar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        txt_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_ingresarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btn_ingresarLayout = new javax.swing.GroupLayout(btn_ingresar);
         btn_ingresar.setLayout(btn_ingresarLayout);
@@ -111,6 +116,10 @@ public class NavBarNL extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txt_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_ingresarMouseClicked
+
+    }//GEN-LAST:event_txt_ingresarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btn_ingresar;
@@ -121,4 +130,11 @@ public class NavBarNL extends javax.swing.JPanel {
     private javax.swing.JLabel txt_registrar;
     private javax.swing.JLabel zafiro;
     // End of variables declaration//GEN-END:variables
+
+    public JPanel getIngresar(){
+        return btn_ingresar;
+    }
+
 }
+
+

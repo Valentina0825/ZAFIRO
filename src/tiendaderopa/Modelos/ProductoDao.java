@@ -29,7 +29,7 @@ public class ProductoDao implements Crud<Producto>{
               + "JOIN categorias c ON p.id_categoria = c.categoria_id; ";
         
         try {
-            con = conectar.getConection();
+            con = conectar.getConnection();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             
