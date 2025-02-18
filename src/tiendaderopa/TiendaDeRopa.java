@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package tiendaderopa;
+
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -28,7 +29,7 @@ public class TiendaDeRopa extends JFrame{
         
         this.setTitle("ZAFIRO");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        /*this.setSize(1300, 650);*/ this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setSize(1300, 650); /*this.setExtendedState(JFrame.MAXIMIZED_BOTH); */
         //this.setLayout(new BorderLayout());
         
         HomeC pagina = new HomeC();
@@ -40,10 +41,19 @@ public class TiendaDeRopa extends JFrame{
     }
     
     public static void main(String[] args) {
+<<<<<<< HEAD
         // TODO code application logic here
         SwingUtilities.invokeLater(() -> new TiendaDeRopa());
 //        Conexion conex = new Conexion();
 //        conex.getConection();
+=======
+        Conexion conex = new Conexion();
+        if (conex.getConnection() != null) { // Si la conexión es exitosa
+            System.out.println("Conexión establecida correctamente.");
+            SwingUtilities.invokeLater(() -> new TiendaDeRopa()); // Inicia la ventana
+        } else {
+            System.out.println("No se pudo conectar a la base de datos.");
+        }
+>>>>>>> d472b1177c7e9387e19c3cc7ff1f5557df3062f2
     }
-    
 }

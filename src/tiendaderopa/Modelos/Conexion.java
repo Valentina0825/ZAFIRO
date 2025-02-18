@@ -13,20 +13,29 @@ import javax.swing.JOptionPane;
  * @author valen
  */
 public class Conexion {
-    Connection con;
-    String url="jdbc:mysql://localhost:3306/zafiro";
-    String pass="";
-    String user="root";
-    
-    public Connection getConection(){
-    
-        try{
+    private Connection con;
+    private final String url = "jdbc:mysql://localhost:3306/zafiro";
+    private final String user = "root";
+    private final String pass = "";
+
+    public Connection getConnection() {
+        try {
+            // Carga el driver
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection(url,user,pass);
-            JOptionPane.showMessageDialog(null, "Conexion Exitosa");
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "problemas de conexion " + e.toString());
+            con = DriverManager.getConnection(url, user, pass);
+            System.out.println("Conexión exitosa");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error: No se encontro el driver de MySQL");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Error en la conexión: " + e.getMessage());
+            e.printStackTrace();
         }
         return con;
+    }
+
+    public static void main(String[] args) {
+        Conexion conexion = new Conexion();
+        conexion.getConnection();
     }
 }
