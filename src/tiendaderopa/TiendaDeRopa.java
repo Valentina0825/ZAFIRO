@@ -31,7 +31,7 @@ public class TiendaDeRopa extends JFrame{
         /*this.setSize(1300, 650);*/ this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //this.setLayout(new BorderLayout());
         
-        RegUsuario pagina = new RegUsuario();
+        HomeC pagina = new HomeC();
         
         this.add(pagina);
         
@@ -41,9 +41,9 @@ public class TiendaDeRopa extends JFrame{
     
     public static void main(String[] args) {
         // TODO code application logic here
-//        SwingUtilities.invokeLater(() -> new TiendaDeRopa());
-        Conexion conex = new Conexion();
-        conex.getConection();
+        SwingUtilities.invokeLater(() -> new TiendaDeRopa());
+//        Conexion conex = new Conexion();
+//        conex.getConection();
     }
     
 }
