@@ -7,6 +7,7 @@ package tiendaderopa.Vistas;
 import tiendaderopa.Vistas.NavBarNL;
 import tiendaderopa.Vistas.NavBarSLC;
 import java.awt.BorderLayout;
+import tiendaderopa.Controladores.InicioCont;
 
 /**
  *
@@ -69,8 +70,10 @@ public class HomeC extends javax.swing.JPanel {
         
         if (login) {
             this.add(barraNavegacionS, BorderLayout.NORTH);
+            
         } else {
             this.add(barraNavegacionN, BorderLayout.NORTH);
+            InicioCont controlador = new InicioCont(barraNavegacionN);
         }
         
         

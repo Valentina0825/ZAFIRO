@@ -34,6 +34,7 @@ public class TiendaDeRopa extends JFrame{
         
         HomeC pagina = new HomeC();
         
+        
         this.add(pagina);
         
         this.setVisible(true);
@@ -41,19 +42,16 @@ public class TiendaDeRopa extends JFrame{
     }
     
     public static void main(String[] args) {
-<<<<<<< HEAD
         // TODO code application logic here
         SwingUtilities.invokeLater(() -> new TiendaDeRopa());
 //        Conexion conex = new Conexion();
 //        conex.getConection();
-=======
         Conexion conex = new Conexion();
         if (conex.getConnection() != null) { // Si la conexión es exitosa
-            System.out.println("Conexión establecida correctamente.");
+            System.out.println("Conexión exitosa :D");
             SwingUtilities.invokeLater(() -> new TiendaDeRopa()); // Inicia la ventana
         } else {
             System.out.println("No se pudo conectar a la base de datos.");
         }
->>>>>>> d472b1177c7e9387e19c3cc7ff1f5557df3062f2
     }
 }

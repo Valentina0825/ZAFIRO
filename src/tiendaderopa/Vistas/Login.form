@@ -32,6 +32,9 @@
           <Dimension value="[660, 650]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fondo_formMouseEntered"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="0" width="660" height="650"/>
@@ -43,18 +46,20 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="tit_contra" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="tit_uc" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="inicio_S" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="separadorNC" alignment="0" max="32767" attributes="0"/>
-                      <Component id="nom_corr" alignment="0" pref="570" max="32767" attributes="0"/>
-                      <Component id="separadorC" alignment="0" max="32767" attributes="0"/>
-                      <Component id="contrasena" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btn_ingresar" min="-2" max="-2" attributes="0"/>
-                      <Component id="alertaC" alignment="0" max="32767" attributes="0"/>
-                      <Component id="alertaUC" max="32767" attributes="0"/>
-                      <Component id="alertaC1" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="tit_contra" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="tit_uc" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inicio_S" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="separadorNC" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nom_corr" alignment="0" pref="570" max="32767" attributes="0"/>
+                          <Component id="separadorC" alignment="0" max="32767" attributes="0"/>
+                          <Component id="contrasena" alignment="0" max="32767" attributes="0"/>
+                          <Component id="alertaC" alignment="0" max="32767" attributes="0"/>
+                          <Component id="alertaUC" max="32767" attributes="0"/>
+                          <Component id="alertaC1" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="btn_ingresar" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="45" max="32767" attributes="0"/>
               </Group>
@@ -83,9 +88,9 @@
                   <Component id="alertaC" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="alertaC1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="btn_ingresar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="btn_ingresar" min="-2" pref="49" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -208,55 +213,6 @@
             <Property name="text" type="java.lang.String" value="Alerta contrase&#xf1;a"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="btn_ingresar">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ingresarMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ingresarMouseExited"/>
-          </Events>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txt_ingresar" min="-2" pref="150" max="-2" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txt_ingresar" alignment="1" pref="50" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="txt_ingresar">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SimSun" size="20" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="INGRESAR"/>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_ingresarMouseClicked"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_ingresarMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_ingresarMouseExited"/>
-              </Events>
-            </Component>
-          </SubComponents>
-        </Container>
         <Component class="javax.swing.JLabel" name="alertaC1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -267,6 +223,30 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Alerta contrase&#xf1;a"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_ingresar">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fa" green="fa" red="fa" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SimSun" size="20" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="INGRESAR"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ingresarMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ingresarMouseExited"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

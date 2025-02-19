@@ -4,6 +4,9 @@
  */
 package tiendaderopa.Vistas;
 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
 /**
  *
  * @author valen
@@ -28,11 +31,9 @@ public class NavBarNL extends javax.swing.JPanel {
 
         navbar = new javax.swing.JPanel();
         zafiro = new javax.swing.JLabel();
-        btn_ingresar = new javax.swing.JPanel();
-        txt_ingresar = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
-        btn_registrar = new javax.swing.JPanel();
-        txt_registrar = new javax.swing.JLabel();
+        btn_ingresar = new javax.swing.JButton();
+        btn_registrar = new javax.swing.JButton();
 
         navbar.setBackground(new java.awt.Color(0, 0, 51));
         navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -41,32 +42,6 @@ public class NavBarNL extends javax.swing.JPanel {
         zafiro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         navbar.add(zafiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 80));
 
-        btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        txt_ingresar.setFont(new java.awt.Font("Sylfaen", 0, 20)); // NOI18N
-        txt_ingresar.setForeground(new java.awt.Color(0, 0, 51));
-        txt_ingresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt_ingresar.setText("INGRESAR");
-        txt_ingresar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        txt_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_ingresar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout btn_ingresarLayout = new javax.swing.GroupLayout(btn_ingresar);
-        btn_ingresar.setLayout(btn_ingresarLayout);
-        btn_ingresarLayout.setHorizontalGroup(
-            btn_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_ingresarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txt_ingresar, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        btn_ingresarLayout.setVerticalGroup(
-            btn_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txt_ingresar, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-        );
-
-        navbar.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 140, -1));
-
         titulo.setFont(new java.awt.Font("Sylfaen", 0, 45)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -74,28 +49,34 @@ public class NavBarNL extends javax.swing.JPanel {
         titulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         navbar.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, 80));
 
+        btn_ingresar.setBackground(new java.awt.Color(250, 250, 250));
+        btn_ingresar.setFont(new java.awt.Font("SimSun", 1, 20)); // NOI18N
+        btn_ingresar.setText("REGISTRARSE");
+        btn_ingresar.setBorder(null);
+        btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresarActionPerformed(evt);
+            }
+        });
+        navbar.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 20, 150, 40));
+
+        btn_registrar.setBackground(new java.awt.Color(250, 250, 250));
+        btn_registrar.setFont(new java.awt.Font("SimSun", 1, 20)); // NOI18N
+        btn_registrar.setText("INGRESAR");
+        btn_registrar.setBorder(null);
         btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        txt_registrar.setFont(new java.awt.Font("Sylfaen", 0, 20)); // NOI18N
-        txt_registrar.setForeground(new java.awt.Color(0, 0, 51));
-        txt_registrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt_registrar.setText("REGISTRARSE");
-        txt_registrar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        txt_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_registrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout btn_registrarLayout = new javax.swing.GroupLayout(btn_registrar);
-        btn_registrar.setLayout(btn_registrarLayout);
-        btn_registrarLayout.setHorizontalGroup(
-            btn_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txt_registrar, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        btn_registrarLayout.setVerticalGroup(
-            btn_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txt_registrar, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-        );
-
-        navbar.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1107, 20, 160, -1));
+        btn_registrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_registrarMouseEntered(evt);
+            }
+        });
+        btn_registrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_registrarActionPerformed(evt);
+            }
+        });
+        navbar.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 20, 140, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -111,14 +92,35 @@ public class NavBarNL extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ingresarActionPerformed
+
+    private void btn_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_registrarActionPerformed
+
+    private void btn_registrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_registrarMouseEntered
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_registrarMouseEntered
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btn_ingresar;
-    private javax.swing.JPanel btn_registrar;
+    private javax.swing.JButton btn_ingresar;
+    private javax.swing.JButton btn_registrar;
     private javax.swing.JPanel navbar;
     private javax.swing.JLabel titulo;
-    private javax.swing.JLabel txt_ingresar;
-    private javax.swing.JLabel txt_registrar;
     private javax.swing.JLabel zafiro;
     // End of variables declaration//GEN-END:variables
+
+    
+    public JButton getBtnIngresar(){
+        return btn_ingresar;
+    }
+    
+    public JButton getBtnRegistrar(){
+        return btn_registrar;
+    }
+    
 }

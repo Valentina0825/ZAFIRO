@@ -4,6 +4,8 @@
  */
 package tiendaderopa.Vistas;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author valen
@@ -83,4 +85,10 @@ public class NavBarSLC extends javax.swing.JPanel {
     private javax.swing.JLabel titulo;
     private javax.swing.JLabel zafiro;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getIcin_bolsa() {
+        return icon_bolsa;
+    }
+
+
 }

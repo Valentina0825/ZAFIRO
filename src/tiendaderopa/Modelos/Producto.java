@@ -14,15 +14,17 @@ public class Producto {
     private String nombre_prod;
     private String descipcion_prod;
     private int cantidad_prod;
+    private int precio_prod;
     private int id_talla;
     private String img_prod;
     private int categoria_prod;
 
-    public Producto(int producto_id, String nombre_prod, String descipcion_prod, int cantidad_prod, int id_talla, String img_prod, int categoria_prod) {
+    public Producto(int producto_id, String nombre_prod, String descipcion_prod, int cantidad_prod,int precio_prod, int id_talla, String img_prod, int categoria_prod) {
         this.producto_id = producto_id;
         this.nombre_prod = nombre_prod;
         this.descipcion_prod = descipcion_prod;
         this.cantidad_prod = cantidad_prod;
+        this.precio_prod = precio_prod;
         this.id_talla = id_talla;
         this.img_prod = img_prod;
         this.categoria_prod = categoria_prod;
@@ -61,6 +63,16 @@ public class Producto {
     public void setCantidad_prod(int cantidad_prod) {
         this.cantidad_prod = cantidad_prod;
     }
+
+    public int getPrecio_prod() {
+        return precio_prod;
+    }
+
+    public void setPrecio_prod(int precio_prod) {
+        this.precio_prod = precio_prod;
+    }
+    
+    
 
     public int getId_talla() {
         return id_talla;

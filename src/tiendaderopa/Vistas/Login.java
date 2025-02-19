@@ -38,9 +38,8 @@ public class Login extends javax.swing.JPanel {
         alertaUC = new javax.swing.JLabel();
         contrasena = new javax.swing.JPasswordField();
         alertaC = new javax.swing.JLabel();
-        btn_ingresar = new javax.swing.JPanel();
-        txt_ingresar = new javax.swing.JLabel();
         alertaC1 = new javax.swing.JLabel();
+        btn_ingresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         imagen_modelo = new javax.swing.JLabel();
 
@@ -49,6 +48,11 @@ public class Login extends javax.swing.JPanel {
 
         fondo_form.setBackground(new java.awt.Color(0, 0, 51));
         fondo_form.setPreferredSize(new java.awt.Dimension(660, 650));
+        fondo_form.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                fondo_formMouseEntered(evt);
+            }
+        });
 
         inicio_S.setFont(new java.awt.Font("Sylfaen", 1, 50)); // NOI18N
         inicio_S.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,7 +108,15 @@ public class Login extends javax.swing.JPanel {
         alertaC.setForeground(new java.awt.Color(0, 0, 51));
         alertaC.setText("Alerta contraseña");
 
-        btn_ingresar.setBackground(new java.awt.Color(255, 255, 255));
+        alertaC1.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
+        alertaC1.setForeground(new java.awt.Color(0, 0, 51));
+        alertaC1.setText("Alerta contraseña");
+
+        btn_ingresar.setBackground(new java.awt.Color(250, 250, 250));
+        btn_ingresar.setFont(new java.awt.Font("SimSun", 1, 20)); // NOI18N
+        btn_ingresar.setForeground(new java.awt.Color(0, 0, 51));
+        btn_ingresar.setText("INGRESAR");
+        btn_ingresar.setBorder(null);
         btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -115,56 +127,25 @@ public class Login extends javax.swing.JPanel {
             }
         });
 
-        txt_ingresar.setFont(new java.awt.Font("SimSun", 1, 20)); // NOI18N
-        txt_ingresar.setForeground(new java.awt.Color(0, 0, 51));
-        txt_ingresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt_ingresar.setText("INGRESAR");
-        txt_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txt_ingresarMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                txt_ingresarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                txt_ingresarMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btn_ingresarLayout = new javax.swing.GroupLayout(btn_ingresar);
-        btn_ingresar.setLayout(btn_ingresarLayout);
-        btn_ingresarLayout.setHorizontalGroup(
-            btn_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txt_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        btn_ingresarLayout.setVerticalGroup(
-            btn_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txt_ingresar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        alertaC1.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
-        alertaC1.setForeground(new java.awt.Color(0, 0, 51));
-        alertaC1.setText("Alerta contraseña");
-
         javax.swing.GroupLayout fondo_formLayout = new javax.swing.GroupLayout(fondo_form);
         fondo_form.setLayout(fondo_formLayout);
         fondo_formLayout.setHorizontalGroup(
             fondo_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondo_formLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(fondo_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tit_contra)
-                    .addComponent(tit_uc)
-                    .addComponent(inicio_S)
-                    .addComponent(separadorNC)
-                    .addComponent(nom_corr, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
-                    .addComponent(separadorC)
-                    .addComponent(contrasena)
-                    .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alertaC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(alertaUC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(alertaC1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(fondo_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fondo_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(tit_contra)
+                        .addComponent(tit_uc)
+                        .addComponent(inicio_S)
+                        .addComponent(separadorNC)
+                        .addComponent(nom_corr, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+                        .addComponent(separadorC)
+                        .addComponent(contrasena)
+                        .addComponent(alertaC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(alertaUC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(alertaC1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         fondo_formLayout.setVerticalGroup(
@@ -190,9 +171,9 @@ public class Login extends javax.swing.JPanel {
                 .addComponent(alertaC)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alertaC1)
-                .addGap(53, 53, 53)
-                .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addGap(55, 55, 55)
+                .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
 
         add(fondo_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 650));
@@ -207,24 +188,6 @@ public class Login extends javax.swing.JPanel {
     private void nom_corrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_corrActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nom_corrActionPerformed
-
-    private void txt_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_ingresarMouseEntered
-        btn_ingresar.setBackground(new java.awt.Color(195,195,195)); // Color gris
-    }//GEN-LAST:event_txt_ingresarMouseEntered
-
-    private void btn_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseEntered
-       btn_ingresar.setBackground(new java.awt.Color(195,195,195)); // Color gris
-    }//GEN-LAST:event_btn_ingresarMouseEntered
-
-    private void btn_ingresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseExited
-        // TODO add your handling code here:
-        btn_ingresar.setBackground(new java.awt.Color(255,255,255)); // Color blanco
-    }//GEN-LAST:event_btn_ingresarMouseExited
-
-    private void txt_ingresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_ingresarMouseExited
-        // TODO add your handling code here:
-        btn_ingresar.setBackground(new java.awt.Color(255,255,255)); // Color blanco
-    }//GEN-LAST:event_txt_ingresarMouseExited
 
     private void nom_corrMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nom_corrMousePressed
         // TODO add your handling code here:
@@ -254,17 +217,26 @@ public class Login extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_contrasenaMousePressed
 
-    private void txt_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_ingresarMouseClicked
+    private void fondo_formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fondo_formMouseEntered
         // TODO add your handling code here:
-        javax.swing.JOptionPane.showMessageDialog(this,"credencial de ingreso: " + nom_corr.getText() + "\n Contraseña: " + String.valueOf( contrasena.getPassword()));
-    }//GEN-LAST:event_txt_ingresarMouseClicked
+    }//GEN-LAST:event_fondo_formMouseEntered
+
+    private void btn_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseEntered
+        // TODO add your handling code here:
+        btn_ingresar.setBackground(new java.awt.Color(195,195,195)); // Color gris
+    }//GEN-LAST:event_btn_ingresarMouseEntered
+
+    private void btn_ingresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseExited
+        // TODO add your handling code here:
+        btn_ingresar.setBackground(new java.awt.Color(255,255,255)); // Color blanco
+    }//GEN-LAST:event_btn_ingresarMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel alertaC;
     private javax.swing.JLabel alertaC1;
     private javax.swing.JLabel alertaUC;
-    private javax.swing.JPanel btn_ingresar;
+    private javax.swing.JButton btn_ingresar;
     private javax.swing.JPasswordField contrasena;
     private javax.swing.JPanel fondo_form;
     private javax.swing.JLabel imagen_modelo;
@@ -275,6 +247,5 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JSeparator separadorNC;
     private javax.swing.JLabel tit_contra;
     private javax.swing.JLabel tit_uc;
-    private javax.swing.JLabel txt_ingresar;
     // End of variables declaration//GEN-END:variables
 }

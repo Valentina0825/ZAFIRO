@@ -29,12 +29,23 @@ public class ProductoDao implements Crud<Producto>{
               + "JOIN categorias c ON p.id_categoria = c.categoria_id; ";
         
         try {
-            con = conectar.getConection();
+            con = conectar.getConnection();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             
             while(rs.next()){
                 Producto prod = new Producto();
+                
+                prod.setProducto_id(rs.getInt(1));
+                prod.setNombre_prod(rs.getString(2));
+                prod.setDescipcion_prod(rs.getString(3));
+                prod.setCantidad_prod(rs.getInt(4));
+                prod.setPrecio_prod(rs.getInt(5));
+                prod.setId_talla(rs.getInt(6));
+                prod.setImg_prod(rs.getString(7));
+                prod.setCategoria_prod(rs.getInt(8));
+                
+               datosProds.add(prod);
             }
         
         } catch (Exception e) {
@@ -47,27 +58,28 @@ public class ProductoDao implements Crud<Producto>{
                 if (con != null) {
                     con.close();
                 }
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Error al cerrar la conexión: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            } catch (Exception E) {
+                JOptionPane.showMessageDialog(null, "Error al cerrar la conexión: " + E.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
         
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return datosProds;
+    
     }
 
     @Override
     public int setAgregar(Producto i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 0;
     }
 
     @Override
     public int setActualizar(Producto i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 0;
     }
 
     @Override
     public int setEliminar(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 0;
     }
     
 }

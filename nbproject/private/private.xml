@@ -2,20 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/NavBarNL.java</file>
+            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Controladores/InicioCont.java</file>
             <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Modelos/ProductoDao.java</file>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/NavBarSLC.java</file>
+            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/NavBarNL.java</file>
             <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Modelos/Crud.java</file>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/PanelRound.java</file>
+            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Controladores/ContenidoCont.java</file>
             <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Modelos/Conexion.java</file>
             <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Modelos/Producto.java</file>
             <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/HomeC.java</file>
             <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/TiendaDeRopa.java</file>
         </group>
-=======
-        <group/>
->>>>>>> d472b1177c7e9387e19c3cc7ff1f5557df3062f2
     </open-files>
 </project-private>
