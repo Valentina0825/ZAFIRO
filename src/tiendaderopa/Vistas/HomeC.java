@@ -79,7 +79,15 @@ public class HomeC extends javax.swing.JPanel {
             BarNLCont controlador = new BarNLCont(barraNavegacionNL);
         }
        
-        
+        // Remueve jScrollPane1 de donde fue agregado antes
+        this.remove(jScrollPane1);
+
+        // Agrega jScrollPane1 en BorderLayout.SOUTH
+        this.add(jScrollPane1, BorderLayout.SOUTH);
+
+        // Refresca el diseño para aplicar los cambios
+        this.revalidate();
+        this.repaint();
    
     }
     
