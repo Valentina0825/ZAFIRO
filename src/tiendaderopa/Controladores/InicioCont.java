@@ -41,7 +41,20 @@ public class InicioCont implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ingresar) {
-            JOptionPane.showMessageDialog(null, "¡Botón Ingresar presionado!");
+            JFrame loginFrame = new JFrame("Iniciar Sesión");
+                    loginFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    loginFrame.setSize(1300, 650);
+                    loginFrame.setLocationRelativeTo(null);
+                    
+                    Login lg = new Login(); // Crear la instancia de Login (si es un JPanel)
+                    loginFrame.add(lg); // Agregar el JPanel a la ventana
+                    loginFrame.setVisible(true);
+
+                    // Buscar la ventana padre y cerrarla si es JFrame
+                    JFrame ventanaPadre = (JFrame) vista.getTopLevelAncestor();
+                    if (ventanaPadre != null) {
+                        ventanaPadre.dispose();
+                    }
         }if (e.getSource() == registrar) {
             JOptionPane.showMessageDialog(null, "¡Botón Registrarse presionado!");
         }

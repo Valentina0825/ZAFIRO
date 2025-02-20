@@ -10,7 +10,9 @@ import javax.swing.SwingUtilities;
 import tiendaderopa.Modelos.Conexion;
 import tiendaderopa.Vistas.Login;
 import tiendaderopa.Vistas.HomeC;
-import tiendaderopa.Vistas.RegUsuario;
+import tiendaderopa.Vistas.RegistroUsuario;
+import tiendaderopa.Vistas.Producto;
+
 
 
 /**
@@ -32,7 +34,7 @@ public class TiendaDeRopa extends JFrame{
         this.setSize(1300, 650); /*this.setExtendedState(JFrame.MAXIMIZED_BOTH); */
         //this.setLayout(new BorderLayout());
         
-        HomeC pagina = new HomeC();
+        RegistroUsuario pagina = new RegistroUsuario();
         
         
         this.add(pagina);
