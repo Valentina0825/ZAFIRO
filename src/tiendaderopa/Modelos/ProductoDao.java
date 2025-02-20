@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author valen
  */
-public class ProductoDao implements Crud<Producto>{
+public class ProductoDao implements Crud<Producto> {
     
     Conexion conectar = new Conexion();
     Connection con;
@@ -29,7 +29,7 @@ public class ProductoDao implements Crud<Producto>{
               + "JOIN categorias c ON p.id_categoria = c.categoria_id; ";
         
         try {
-            con = conectar.getConnection();
+            con = conectar.getConexion();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             

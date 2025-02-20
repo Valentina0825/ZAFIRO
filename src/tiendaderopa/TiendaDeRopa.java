@@ -31,7 +31,7 @@ public class TiendaDeRopa extends JFrame{
         
         this.setTitle("ZAFIRO");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1300, 650); /*this.setExtendedState(JFrame.MAXIMIZED_BOTH); */
+        this.setSize(1300, 650); this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //this.setLayout(new BorderLayout());
         
         RegistroUsuario pagina = new RegistroUsuario();
@@ -46,14 +46,13 @@ public class TiendaDeRopa extends JFrame{
     public static void main(String[] args) {
         // TODO code application logic here
         SwingUtilities.invokeLater(() -> new TiendaDeRopa());
-//        Conexion conex = new Conexion();
-//        conex.getConection();
+
         Conexion conex = new Conexion();
-        if (conex.getConnection() != null) { // Si la conexión es exitosa
+        if (conex.getConexion() != null) { // Si la conexión es exitosa
             System.out.println("Conexión exitosa :D");
             SwingUtilities.invokeLater(() -> new TiendaDeRopa()); // Inicia la ventana
         } else {
-            System.out.println("No se pudo conectar a la base de datos.");
+            System.out.println("No se pudo conectar a la base de datos :(.");
         }
     }
 }

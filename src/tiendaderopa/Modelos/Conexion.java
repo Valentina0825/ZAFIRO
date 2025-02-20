@@ -2,6 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package tiendaderopa.Modelos;
 
 import java.sql.Connection;
@@ -18,7 +22,7 @@ public class Conexion {
     private final String user = "root";
     private final String pass = "";
 
-    public Connection getConnection() {
+    public Connection getConexion() {
         try {
             // Carga el driver
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -34,8 +38,8 @@ public class Conexion {
         return con;
     }
 
-    public static void main(String[] args) {
-        Conexion conexion = new Conexion();
-        conexion.getConnection();
-    }
+//    public static void main(String[] args) {
+//        Conexion conexion = new Conexion();
+//        conexion.getConexion();
+//    }
 }
