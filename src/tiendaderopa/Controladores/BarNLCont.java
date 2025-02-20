@@ -41,6 +41,14 @@ public class BarNLCont implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ingresar) {
+<<<<<<< HEAD:src/tiendaderopa/Controladores/InicioCont.java
+            JFrame loginFrame = new JFrame("Iniciar Sesión");
+                    loginFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    loginFrame.setSize(1300, 650);
+                    loginFrame.setLocationRelativeTo(null);
+                    
+                    Login lg = new Login(); // Crear la instancia de Login (si es un JPanel)
+=======
 //            JOptionPane.showMessageDialog(null, "¡Botón Ingresar presionado!");
                     JFrame loginFrame = new JFrame("Iniciar Sesión");
                     loginFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -48,12 +56,16 @@ public class BarNLCont implements ActionListener{
                     loginFrame.setLocationRelativeTo(null);
                     
                     Login lg = new Login(); // Crear el objeto de Login para meter el panel en el jframe
+>>>>>>> a340856a572f7387b28a568140888e289dc9d0b5:src/tiendaderopa/Controladores/BarNLCont.java
                     loginFrame.add(lg); // Agregar el JPanel a la ventana
                     loginFrame.setVisible(true);
 
                     // Buscar la ventana padre y cerrarla si es JFrame
                     JFrame ventanaPadre = (JFrame) vista.getTopLevelAncestor();
+<<<<<<< HEAD:src/tiendaderopa/Controladores/InicioCont.java
+=======
                     
+>>>>>>> a340856a572f7387b28a568140888e289dc9d0b5:src/tiendaderopa/Controladores/BarNLCont.java
                     if (ventanaPadre != null) {
                         ventanaPadre.dispose();
                     }
