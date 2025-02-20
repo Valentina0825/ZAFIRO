@@ -206,7 +206,7 @@ public class Login extends javax.swing.JPanel {
     private void contrasenaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contrasenaMousePressed
         // TODO add your handling code here:
         if(nom_corr.getText().isEmpty()){
-            nom_corr.setText("Ingrese su nombre de usuario o correo electronico");
+            nom_corr.setText("Ingrese su nombre de usuario ");
             nom_corr.setForeground(Color.GRAY);
             separadorNC.setForeground(Color.GRAY);
         }

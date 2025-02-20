@@ -98,8 +98,4 @@ public class Producto {
         this.categoria_prod = categoria_prod;
     }
     
-    
-    
-    
-    
 }

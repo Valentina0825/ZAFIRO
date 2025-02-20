@@ -51,32 +51,32 @@ public class NavBarNL extends javax.swing.JPanel {
 
         btn_ingresar.setBackground(new java.awt.Color(250, 250, 250));
         btn_ingresar.setFont(new java.awt.Font("SimSun", 1, 20)); // NOI18N
-        btn_ingresar.setText("REGISTRARSE");
+        btn_ingresar.setText("INGRESAR");
         btn_ingresar.setBorder(null);
         btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_ingresarMouseEntered(evt);
+            }
+        });
         btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ingresarActionPerformed(evt);
             }
         });
-        navbar.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 20, 150, 40));
+        navbar.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 20, 140, 40));
 
         btn_registrar.setBackground(new java.awt.Color(250, 250, 250));
         btn_registrar.setFont(new java.awt.Font("SimSun", 1, 20)); // NOI18N
-        btn_registrar.setText("INGRESAR");
+        btn_registrar.setText("REGISTRARSE");
         btn_registrar.setBorder(null);
         btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_registrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_registrarMouseEntered(evt);
-            }
-        });
         btn_registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_registrarActionPerformed(evt);
             }
         });
-        navbar.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 20, 140, 40));
+        navbar.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 20, 150, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -92,18 +92,18 @@ public class NavBarNL extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_ingresarActionPerformed
-
     private void btn_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_registrarActionPerformed
 
-    private void btn_registrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_registrarMouseEntered
+    private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ingresarActionPerformed
+
+    private void btn_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseEntered
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_btn_registrarMouseEntered
+    }//GEN-LAST:event_btn_ingresarMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

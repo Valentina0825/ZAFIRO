@@ -5,6 +5,8 @@
 package tiendaderopa.Vistas;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
+import tiendaderopa.Modelos.Producto;
 
 /**
  *
@@ -15,8 +17,15 @@ public class PanelProducto extends javax.swing.JPanel {
     /**
      * Creates new form PanelProducto
      */
-    public PanelProducto() {
+    public PanelProducto(Producto producto) {
         initComponents();
+        nom_producto.setText(producto.getNombre_prod());
+        precio.setText("$" + producto.getPrecio_prod());
+
+        // Cargar imagen desde la ruta almacenada
+        if (producto.getImg_prod() != null && !producto.getImg_prod().isEmpty()) {
+            img_icon.setIcon(new ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/imgs_productos/" + producto.getImg_prod())));
+        }
     }
 
     /**
