@@ -64,7 +64,7 @@ public class RegistroUsuario extends javax.swing.JPanel {
         inicio_S.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
         inicio_S.setForeground(new java.awt.Color(255, 255, 255));
         inicio_S.setText("REGISTRATE");
-        fondo_form.add(inicio_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, 60));
+        fondo_form.add(inicio_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, 60));
 
         tit_uc.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
         tit_uc.setForeground(new java.awt.Color(255, 255, 255));
@@ -212,7 +212,7 @@ public class RegistroUsuario extends javax.swing.JPanel {
 
         separadorNC2.setBackground(new java.awt.Color(153, 153, 153));
         separadorNC2.setForeground(new java.awt.Color(153, 153, 153));
-        fondo_form.add(separadorNC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 570, 10));
+        fondo_form.add(separadorNC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 570, 10));
 
         add(fondo_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 650));
 

@@ -25,7 +25,7 @@ public class TiendaDeRopa extends JFrame{
      * @param args the command line arguments
      */
     
-    boolean validacion = false;
+    boolean validacion = true;
     
     public TiendaDeRopa() {
         
@@ -34,7 +34,7 @@ public class TiendaDeRopa extends JFrame{
         this.setSize(1300, 650); this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //this.setLayout(new BorderLayout());
         
-        RegistroUsuario pagina = new RegistroUsuario();
+        HomeC pagina = new HomeC();
         
         
         this.add(pagina);

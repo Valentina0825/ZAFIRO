@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class Conexion {
     private Connection con;
-    private final String url = "jdbc:mysql://localhost:3306/zafiro";
+    private final String url = "jdbc:mysql://localhost:3306/zaf";
     private final String user = "root";
     private final String pass = "";
 

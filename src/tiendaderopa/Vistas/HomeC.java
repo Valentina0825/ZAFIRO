@@ -8,6 +8,7 @@ import tiendaderopa.Vistas.NavBarNL;
 import tiendaderopa.Vistas.NavBarSLC;
 import java.awt.BorderLayout;
 import javax.swing.JScrollPane;
+import javax.swing.border.EmptyBorder;
 import tiendaderopa.Controladores.BarNLCont;
 import tiendaderopa.Controladores.ContenidoCont;
 
@@ -40,27 +41,28 @@ public class HomeC extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         contenido = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(248, 248, 248));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jScrollPane1.setBackground(new java.awt.Color(248, 248, 248));
         jScrollPane1.setBorder(null);
 
-        contenido.setBackground(new java.awt.Color(102, 102, 102));
+        contenido.setBackground(new java.awt.Color(248, 248, 248));
 
         javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
         contenido.setLayout(contenidoLayout);
         contenidoLayout.setHorizontalGroup(
             contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addGap(0, 539, Short.MAX_VALUE)
         );
         contenidoLayout.setVerticalGroup(
             contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGap(0, 620, Short.MAX_VALUE)
         );
 
         jScrollPane1.setViewportView(contenido);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1280, 550));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 90, 1280, 540));
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -81,9 +83,11 @@ public class HomeC extends javax.swing.JPanel {
        
         // Remueve jScrollPane1 de donde fue agregado antes
         this.remove(jScrollPane1);
+        
+        jScrollPane1.setViewportBorder(new EmptyBorder(20, 20, 20, 20));
 
         // Agrega jScrollPane1 en BorderLayout.SOUTH
-        this.add(jScrollPane1, BorderLayout.SOUTH);
+        this.add(jScrollPane1, BorderLayout.CENTER);
 
         // Refresca el diseño para aplicar los cambios
         this.revalidate();
@@ -96,10 +100,6 @@ public class HomeC extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-    
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
 
     
 

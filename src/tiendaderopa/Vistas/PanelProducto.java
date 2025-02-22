@@ -22,7 +22,7 @@ public class PanelProducto extends javax.swing.JPanel {
         nom_producto.setText(producto.getNombre_prod());
         precio.setText("$" + producto.getPrecio_prod());
 
-        // Cargar imagen desde la ruta almacenada
+        // Cargar imagen desde la ruta
         if (producto.getImg_prod() != null && !producto.getImg_prod().isEmpty()) {
             img_icon.setIcon(new ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/imgs_productos/" + producto.getImg_prod())));
         }
@@ -85,18 +85,18 @@ public class PanelProducto extends javax.swing.JPanel {
         pnl_producto.setLayout(pnl_productoLayout);
         pnl_productoLayout.setHorizontalGroup(
             pnl_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(nom_producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnl_productoLayout.createSequentialGroup()
                 .addGroup(pnl_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnl_productoLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(img_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnl_productoLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_productoLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(img_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(nom_producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnl_productoLayout.setVerticalGroup(
             pnl_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -34,7 +34,7 @@ public class ContenidoCont {
     
     private void cargarProductos() {
         List<Producto> listaProductos = productoDao.listar();
-        panelContenido.setLayout(new GridLayout(0, 3, 10, 10)); // 3 columnas, espacio de 10px
+        panelContenido.setLayout(new GridLayout(0, 4, 20, 20)); // 4 columnas, espacio de 10px
 
         for (Producto producto : listaProductos) {
             PanelProducto panel = new PanelProducto(producto);
