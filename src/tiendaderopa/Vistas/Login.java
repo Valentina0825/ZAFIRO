@@ -240,7 +240,7 @@ public class Login extends javax.swing.JPanel {
 
     private void btn_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "El usuario \n" + nomUser.getText() + "\n" + String.valueOf(contrasena.getPassword()) + "\n" +"NO esta registrado ;_;", "Usuario NO registrado" , JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "El usuario \n" + nomUser.getText() + "\n" + String.valueOf(contrasena.getPassword()) + "\n" +"NO esta registrado ;_;", "Usuario NO registrado" , JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_btn_ingresarMouseClicked
 

@@ -6,6 +6,8 @@ package tiendaderopa.Vistas;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import tiendaderopa.Controladores.DetProductoCont;
 import tiendaderopa.Modelos.Producto;
 
 /**
@@ -13,11 +15,13 @@ import tiendaderopa.Modelos.Producto;
  * @author valen
  */
 public class PanelProducto extends javax.swing.JPanel {
+    private Producto produc;
 
     /**
      * Creates new form PanelProducto
      */
     public PanelProducto(Producto producto) {
+        this.produc = producto;
         initComponents();
         nom_producto.setText(producto.getNombre_prod());
         precio.setText("$" + producto.getPrecio_prod());
@@ -41,7 +45,7 @@ public class PanelProducto extends javax.swing.JPanel {
         img_icon = new javax.swing.JLabel();
         nom_producto = new javax.swing.JLabel();
         precio = new javax.swing.JLabel();
-        btn_detalle = new javax.swing.JLabel();
+        btn_detalle = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(248, 248, 248));
         setPreferredSize(new java.awt.Dimension(280, 380));
@@ -64,15 +68,17 @@ public class PanelProducto extends javax.swing.JPanel {
         precio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         precio.setText("PRECIO");
 
-        btn_detalle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btn_detalle.setBackground(new java.awt.Color(204, 204, 204));
+        btn_detalle.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         btn_detalle.setForeground(new java.awt.Color(0, 0, 51));
-        btn_detalle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_detalle.setText(">");
+        btn_detalle.setBorder(null);
         btn_detalle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_detalle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_detalle.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btn_detalle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btn_detalle.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         btn_detalle.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_detalleMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_detalleMouseEntered(evt);
             }
@@ -80,62 +86,81 @@ public class PanelProducto extends javax.swing.JPanel {
                 btn_detalleMouseExited(evt);
             }
         });
+        btn_detalle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_detalleActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_productoLayout = new javax.swing.GroupLayout(pnl_producto);
         pnl_producto.setLayout(pnl_productoLayout);
         pnl_productoLayout.setHorizontalGroup(
             pnl_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(nom_producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnl_productoLayout.createSequentialGroup()
                 .addGroup(pnl_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnl_productoLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnl_productoLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(img_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addComponent(nom_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_productoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(img_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
         pnl_productoLayout.setVerticalGroup(
             pnl_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_productoLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(26, 26, 26)
                 .addComponent(img_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nom_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnl_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(precio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_detalle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addComponent(nom_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnl_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_productoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(17, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_productoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(precio)
+                        .addContainerGap())))
         );
 
         add(pnl_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 380));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_detalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_detalleActionPerformed
+        // TODO add your handling code here:
+        DetProductoCont.mostrarDetalle(produc);
+    }//GEN-LAST:event_btn_detalleActionPerformed
+
     private void btn_detalleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_detalleMouseEntered
         // TODO add your handling code here:
-        btn_detalle.setForeground(new Color(255, 255, 255));
+        btn_detalle.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_btn_detalleMouseEntered
 
     private void btn_detalleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_detalleMouseExited
         // TODO add your handling code here:
-        btn_detalle.setForeground(new Color(0, 0, 51));
+         btn_detalle.setForeground(new Color(0,0,51));
     }//GEN-LAST:event_btn_detalleMouseExited
-
-    private void btn_detalleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_detalleMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btn_detalleMouseClicked
+     
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btn_detalle;
+    private javax.swing.JButton btn_detalle;
     private javax.swing.JLabel img_icon;
     private javax.swing.JLabel nom_producto;
     private tiendaderopa.Vistas.PanelRound pnl_producto;
     private javax.swing.JLabel precio;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtn_detalle() {
+        return btn_detalle;
+    }
+    
+
 }

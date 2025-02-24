@@ -4,6 +4,9 @@
  */
 package tiendaderopa.Vistas;
 import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -28,25 +31,23 @@ public class RegistroUsuario extends javax.swing.JPanel {
     private void initComponents() {
 
         fondo_form = new javax.swing.JPanel();
-        inicio_S = new javax.swing.JLabel();
-        tit_uc = new javax.swing.JLabel();
-        nom_corr = new javax.swing.JTextField();
+        registrarse = new javax.swing.JLabel();
+        tit_nomCom = new javax.swing.JLabel();
+        nom_comp = new javax.swing.JTextField();
         separadorNC = new javax.swing.JSeparator();
+        tit_nomUser = new javax.swing.JLabel();
+        nom_user = new javax.swing.JTextField();
+        separadorNUR = new javax.swing.JSeparator();
+        tit_correo = new javax.swing.JLabel();
+        correo = new javax.swing.JTextField();
+        separadorCorreo = new javax.swing.JSeparator();
         tit_contra = new javax.swing.JLabel();
-        separadorC = new javax.swing.JSeparator();
         contrasena = new javax.swing.JPasswordField();
-        alertaC1 = new javax.swing.JLabel();
-        btn_ingresar = new javax.swing.JButton();
-        nom_corr1 = new javax.swing.JTextField();
-        separadorNC1 = new javax.swing.JSeparator();
-        tit_contra1 = new javax.swing.JLabel();
-        tit_contra2 = new javax.swing.JLabel();
-        separadorC1 = new javax.swing.JSeparator();
-        contrasena1 = new javax.swing.JPasswordField();
-        alertaC2 = new javax.swing.JLabel();
-        tit_uc1 = new javax.swing.JLabel();
-        nom_corr2 = new javax.swing.JTextField();
-        separadorNC2 = new javax.swing.JSeparator();
+        separadorC = new javax.swing.JSeparator();
+        tit_confContra = new javax.swing.JLabel();
+        confContrasena = new javax.swing.JPasswordField();
+        separadorConfC = new javax.swing.JSeparator();
+        btn_registrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         imagen_modelo = new javax.swing.JLabel();
 
@@ -61,45 +62,93 @@ public class RegistroUsuario extends javax.swing.JPanel {
         });
         fondo_form.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        inicio_S.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
-        inicio_S.setForeground(new java.awt.Color(255, 255, 255));
-        inicio_S.setText("REGISTRATE");
-        fondo_form.add(inicio_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, 50));
+        registrarse.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
+        registrarse.setForeground(new java.awt.Color(255, 255, 255));
+        registrarse.setText("REGISTRATE");
+        fondo_form.add(registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, 50));
 
-        tit_uc.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
-        tit_uc.setForeground(new java.awt.Color(255, 255, 255));
-        tit_uc.setText("Nombre Completo  ");
-        fondo_form.add(tit_uc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+        tit_nomCom.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
+        tit_nomCom.setForeground(new java.awt.Color(255, 255, 255));
+        tit_nomCom.setText("Nombre Completo  ");
+        fondo_form.add(tit_nomCom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
-        nom_corr.setBackground(new java.awt.Color(0, 0, 51));
-        nom_corr.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        nom_corr.setForeground(new java.awt.Color(153, 153, 153));
-        nom_corr.setText("Ingrese su nombre de usuario");
-        nom_corr.setBorder(null);
-        nom_corr.addMouseListener(new java.awt.event.MouseAdapter() {
+        nom_comp.setBackground(new java.awt.Color(0, 0, 51));
+        nom_comp.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        nom_comp.setForeground(new java.awt.Color(153, 153, 153));
+        nom_comp.setText("Ingrese su nombre completo");
+        nom_comp.setBorder(null);
+        nom_comp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                nom_corrMousePressed(evt);
+                nom_compMousePressed(evt);
             }
         });
-        nom_corr.addActionListener(new java.awt.event.ActionListener() {
+        nom_comp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_corrActionPerformed(evt);
+                nom_compActionPerformed(evt);
             }
         });
-        fondo_form.add(nom_corr, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 570, 37));
+        fondo_form.add(nom_comp, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 570, 37));
 
         separadorNC.setBackground(new java.awt.Color(153, 153, 153));
         separadorNC.setForeground(new java.awt.Color(153, 153, 153));
-        fondo_form.add(separadorNC, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 570, 20));
+        fondo_form.add(separadorNC, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 570, 20));
+
+        tit_nomUser.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
+        tit_nomUser.setForeground(new java.awt.Color(255, 255, 255));
+        tit_nomUser.setText("Nombre Usuario  ");
+        fondo_form.add(tit_nomUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+
+        nom_user.setBackground(new java.awt.Color(0, 0, 51));
+        nom_user.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        nom_user.setForeground(new java.awt.Color(153, 153, 153));
+        nom_user.setText("Ingrese su nombre de usuario");
+        nom_user.setBorder(null);
+        nom_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                nom_userMousePressed(evt);
+            }
+        });
+        nom_user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nom_userActionPerformed(evt);
+            }
+        });
+        fondo_form.add(nom_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 570, 37));
+
+        separadorNUR.setBackground(new java.awt.Color(153, 153, 153));
+        separadorNUR.setForeground(new java.awt.Color(153, 153, 153));
+        fondo_form.add(separadorNUR, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 570, 10));
+
+        tit_correo.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
+        tit_correo.setForeground(new java.awt.Color(255, 255, 255));
+        tit_correo.setText("Correo Electronico");
+        fondo_form.add(tit_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+
+        correo.setBackground(new java.awt.Color(0, 0, 51));
+        correo.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        correo.setForeground(new java.awt.Color(153, 153, 153));
+        correo.setText("Ingrese su correo electronico");
+        correo.setBorder(null);
+        correo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                correoMousePressed(evt);
+            }
+        });
+        correo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                correoActionPerformed(evt);
+            }
+        });
+        fondo_form.add(correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 570, 37));
+
+        separadorCorreo.setBackground(new java.awt.Color(153, 153, 153));
+        separadorCorreo.setForeground(new java.awt.Color(153, 153, 153));
+        fondo_form.add(separadorCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 570, -1));
 
         tit_contra.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
         tit_contra.setForeground(new java.awt.Color(255, 255, 255));
-        tit_contra.setText("Confirmar Contraseña");
-        fondo_form.add(tit_contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
-
-        separadorC.setBackground(new java.awt.Color(153, 153, 153));
-        separadorC.setForeground(new java.awt.Color(153, 153, 153));
-        fondo_form.add(separadorC, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 570, 10));
+        tit_contra.setText("Contraseña");
+        fondo_form.add(tit_contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
 
         contrasena.setBackground(new java.awt.Color(0, 0, 51));
         contrasena.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
@@ -112,107 +161,54 @@ public class RegistroUsuario extends javax.swing.JPanel {
                 contrasenaMousePressed(evt);
             }
         });
-        fondo_form.add(contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 570, 37));
+        contrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contrasenaActionPerformed(evt);
+            }
+        });
+        fondo_form.add(contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 570, 37));
 
-        alertaC1.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
-        alertaC1.setForeground(new java.awt.Color(0, 0, 51));
-        alertaC1.setText("Alerta contraseña");
-        fondo_form.add(alertaC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 570, -1));
+        separadorC.setBackground(new java.awt.Color(153, 153, 153));
+        separadorC.setForeground(new java.awt.Color(153, 153, 153));
+        fondo_form.add(separadorC, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 570, 10));
 
-        btn_ingresar.setBackground(new java.awt.Color(250, 250, 250));
-        btn_ingresar.setFont(new java.awt.Font("SimSun", 1, 20)); // NOI18N
-        btn_ingresar.setForeground(new java.awt.Color(0, 0, 51));
-        btn_ingresar.setText("REGISTRAR");
-        btn_ingresar.setBorder(null);
-        btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
+        tit_confContra.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
+        tit_confContra.setForeground(new java.awt.Color(255, 255, 255));
+        tit_confContra.setText("Confirmar Contraseña");
+        fondo_form.add(tit_confContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
+
+        confContrasena.setBackground(new java.awt.Color(0, 0, 51));
+        confContrasena.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        confContrasena.setForeground(new java.awt.Color(153, 153, 153));
+        confContrasena.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        confContrasena.setText("Ingrese su contraseña");
+        confContrasena.setBorder(null);
+        confContrasena.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                confContrasenaMousePressed(evt);
+            }
+        });
+        fondo_form.add(confContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 570, 37));
+
+        separadorConfC.setBackground(new java.awt.Color(153, 153, 153));
+        separadorConfC.setForeground(new java.awt.Color(153, 153, 153));
+        fondo_form.add(separadorConfC, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 570, 10));
+
+        btn_registrar.setBackground(new java.awt.Color(250, 250, 250));
+        btn_registrar.setFont(new java.awt.Font("SimSun", 1, 20)); // NOI18N
+        btn_registrar.setForeground(new java.awt.Color(0, 0, 51));
+        btn_registrar.setText("REGISTRAR");
+        btn_registrar.setBorder(null);
+        btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_registrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_ingresarMouseEntered(evt);
+                btn_registrarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_ingresarMouseExited(evt);
+                btn_registrarMouseExited(evt);
             }
         });
-        fondo_form.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 150, 49));
-
-        nom_corr1.setBackground(new java.awt.Color(0, 0, 51));
-        nom_corr1.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        nom_corr1.setForeground(new java.awt.Color(153, 153, 153));
-        nom_corr1.setText("Ingrese su correo electronico");
-        nom_corr1.setBorder(null);
-        nom_corr1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                nom_corr1MousePressed(evt);
-            }
-        });
-        nom_corr1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_corr1ActionPerformed(evt);
-            }
-        });
-        fondo_form.add(nom_corr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 570, 37));
-
-        separadorNC1.setBackground(new java.awt.Color(153, 153, 153));
-        separadorNC1.setForeground(new java.awt.Color(153, 153, 153));
-        fondo_form.add(separadorNC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 570, -1));
-
-        tit_contra1.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
-        tit_contra1.setForeground(new java.awt.Color(255, 255, 255));
-        tit_contra1.setText("Correo Electronico");
-        fondo_form.add(tit_contra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
-
-        tit_contra2.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
-        tit_contra2.setForeground(new java.awt.Color(255, 255, 255));
-        tit_contra2.setText("Contraseña");
-        fondo_form.add(tit_contra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
-
-        separadorC1.setBackground(new java.awt.Color(153, 153, 153));
-        separadorC1.setForeground(new java.awt.Color(153, 153, 153));
-        fondo_form.add(separadorC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 570, 10));
-
-        contrasena1.setBackground(new java.awt.Color(0, 0, 51));
-        contrasena1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        contrasena1.setForeground(new java.awt.Color(153, 153, 153));
-        contrasena1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        contrasena1.setText("Ingrese su contraseña");
-        contrasena1.setBorder(null);
-        contrasena1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                contrasena1MousePressed(evt);
-            }
-        });
-        fondo_form.add(contrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 570, 37));
-
-        alertaC2.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
-        alertaC2.setForeground(new java.awt.Color(0, 0, 51));
-        alertaC2.setText("Alerta contraseña");
-        fondo_form.add(alertaC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 570, -1));
-
-        tit_uc1.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
-        tit_uc1.setForeground(new java.awt.Color(255, 255, 255));
-        tit_uc1.setText("Nombre Usuario  ");
-        fondo_form.add(tit_uc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
-
-        nom_corr2.setBackground(new java.awt.Color(0, 0, 51));
-        nom_corr2.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        nom_corr2.setForeground(new java.awt.Color(153, 153, 153));
-        nom_corr2.setText("Ingrese su nombre de usuario");
-        nom_corr2.setBorder(null);
-        nom_corr2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                nom_corr2MousePressed(evt);
-            }
-        });
-        nom_corr2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_corr2ActionPerformed(evt);
-            }
-        });
-        fondo_form.add(nom_corr2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 570, 37));
-
-        separadorNC2.setBackground(new java.awt.Color(153, 153, 153));
-        separadorNC2.setForeground(new java.awt.Color(153, 153, 153));
-        fondo_form.add(separadorNC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 570, 10));
+        fondo_form.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 150, 49));
 
         add(fondo_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 650));
 
@@ -223,95 +219,123 @@ public class RegistroUsuario extends javax.swing.JPanel {
         add(imagen_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, -160, 800, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nom_corrMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nom_corrMousePressed
+    private void nom_compMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nom_compMousePressed
         // TODO add your handling code here:
-        if(nom_corr.getText().equals("Ingrese su nombre de usuario o correo electronico")){
-            nom_corr.setText("");
-            nom_corr.setForeground(Color.white);
+        if(nom_comp.getText().equals("Ingrese su nombre de usuario o correo electronico")){
+            nom_comp.setText("");
+            nom_comp.setForeground(Color.white);
             separadorNC.setForeground(Color.white);
         }
-        if(String.valueOf(contrasena.getPassword()).isEmpty()){
-            contrasena.setText("Ingrese su contraseña");
-            contrasena.setForeground(Color.GRAY);
-            separadorC.setForeground(Color.GRAY);
+        if(String.valueOf(confContrasena.getPassword()).isEmpty()){
+            confContrasena.setText("Ingrese su contraseña");
+            confContrasena.setForeground(Color.GRAY);
+            separadorConfC.setForeground(Color.GRAY);
         }
-    }//GEN-LAST:event_nom_corrMousePressed
+    }//GEN-LAST:event_nom_compMousePressed
 
-    private void nom_corrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_corrActionPerformed
+    private void nom_compActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_compActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nom_corrActionPerformed
+    }//GEN-LAST:event_nom_compActionPerformed
 
-    private void btn_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseEntered
+    private void btn_registrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_registrarMouseEntered
         // TODO add your handling code here:
-        btn_ingresar.setBackground(new java.awt.Color(195,195,195)); // Color gris
-    }//GEN-LAST:event_btn_ingresarMouseEntered
+        btn_registrar.setBackground(new java.awt.Color(195,195,195)); // Color gris
+    }//GEN-LAST:event_btn_registrarMouseEntered
 
-    private void btn_ingresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseExited
+    private void btn_registrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_registrarMouseExited
         // TODO add your handling code here:
-        btn_ingresar.setBackground(new java.awt.Color(255,255,255)); // Color blanco
-    }//GEN-LAST:event_btn_ingresarMouseExited
+        btn_registrar.setBackground(new java.awt.Color(255,255,255)); // Color blanco
+    }//GEN-LAST:event_btn_registrarMouseExited
 
     private void fondo_formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fondo_formMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_fondo_formMouseEntered
 
-    private void nom_corr1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nom_corr1MousePressed
+    private void correoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_correoMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nom_corr1MousePressed
+    }//GEN-LAST:event_correoMousePressed
 
-    private void nom_corr1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_corr1ActionPerformed
+    private void correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nom_corr1ActionPerformed
-
-    private void contrasena1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contrasena1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contrasena1MousePressed
-
-    private void nom_corr2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nom_corr2MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nom_corr2MousePressed
-
-    private void nom_corr2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_corr2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nom_corr2ActionPerformed
+    }//GEN-LAST:event_correoActionPerformed
 
     private void contrasenaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contrasenaMousePressed
         // TODO add your handling code here:
-        if(nom_corr.getText().isEmpty()){
-            nom_corr.setText("Ingrese su nombre de usuario o correo electronico");
-            nom_corr.setForeground(Color.GRAY);
+    }//GEN-LAST:event_contrasenaMousePressed
+
+    private void nom_userMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nom_userMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nom_userMousePressed
+
+    private void nom_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_userActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nom_userActionPerformed
+
+    private void confContrasenaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confContrasenaMousePressed
+        // TODO add your handling code here:
+        if(nom_comp.getText().isEmpty()){
+            nom_comp.setText("Ingrese su nombre de usuario o correo electronico");
+            nom_comp.setForeground(Color.GRAY);
             separadorNC.setForeground(Color.GRAY);
         }
-        if(String.valueOf(contrasena.getPassword()).equals("Ingrese su contraseña")){
-            contrasena.setText("");
-            contrasena.setForeground(Color.white);
-            separadorC.setForeground(Color.white);
+        if(String.valueOf(confContrasena.getPassword()).equals("Ingrese su contraseña")){
+            confContrasena.setText("");
+            confContrasena.setForeground(Color.white);
+            separadorConfC.setForeground(Color.white);
         }
-    }//GEN-LAST:event_contrasenaMousePressed
+    }//GEN-LAST:event_confContrasenaMousePressed
+
+    private void contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contrasenaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel alertaC1;
-    private javax.swing.JLabel alertaC2;
-    private javax.swing.JButton btn_ingresar;
+    private javax.swing.JButton btn_registrar;
+    private javax.swing.JPasswordField confContrasena;
     private javax.swing.JPasswordField contrasena;
-    private javax.swing.JPasswordField contrasena1;
+    private javax.swing.JTextField correo;
     private javax.swing.JPanel fondo_form;
     private javax.swing.JLabel imagen_modelo;
-    private javax.swing.JLabel inicio_S;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField nom_corr;
-    private javax.swing.JTextField nom_corr1;
-    private javax.swing.JTextField nom_corr2;
+    private javax.swing.JTextField nom_comp;
+    private javax.swing.JTextField nom_user;
+    private javax.swing.JLabel registrarse;
     private javax.swing.JSeparator separadorC;
-    private javax.swing.JSeparator separadorC1;
+    private javax.swing.JSeparator separadorConfC;
+    private javax.swing.JSeparator separadorCorreo;
     private javax.swing.JSeparator separadorNC;
-    private javax.swing.JSeparator separadorNC1;
-    private javax.swing.JSeparator separadorNC2;
+    private javax.swing.JSeparator separadorNUR;
+    private javax.swing.JLabel tit_confContra;
     private javax.swing.JLabel tit_contra;
-    private javax.swing.JLabel tit_contra1;
-    private javax.swing.JLabel tit_contra2;
-    private javax.swing.JLabel tit_uc;
-    private javax.swing.JLabel tit_uc1;
+    private javax.swing.JLabel tit_correo;
+    private javax.swing.JLabel tit_nomCom;
+    private javax.swing.JLabel tit_nomUser;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtn_registrar() {
+        return btn_registrar;
+    }
+
+    public JPasswordField getConfContrasena() {
+        return confContrasena;
+    }
+
+    public JPasswordField getContrasena() {
+        return contrasena;
+    }
+
+    public JTextField getCorreo() {
+        return correo;
+    }
+
+    public JTextField getNom_comp() {
+        return nom_comp;
+    }
+
+    public JTextField getNom_user() {
+        return nom_user;
+    }
+
+
 }

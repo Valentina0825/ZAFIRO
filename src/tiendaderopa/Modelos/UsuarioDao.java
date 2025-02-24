@@ -92,17 +92,77 @@ public class UsuarioDao implements Crud<Usuario>{
     }
 
     @Override
-    public int setAgregar(Usuario i) {
+    public boolean setAgregar(Usuario u) {
+        String sql = "INSERT INTO usuarios (nombre_usu, correo_usu, password_usu, rol_id, username_usu) VALUES(?,?,?,?,?)";
+        try {
+            con = conectar.getConexion();
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, u.getNombre_usu());
+            ps.setString(2, u.getCorreo_usu());
+            ps.setString(3, u.getPass_usu());
+            ps.setInt(4, u.getrolID_usu());
+            ps.setString(5, u.getUsername_usu());
+
+
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString(), "Error al realizar la insercion \n" + e.getMessage(), JOptionPane.ERROR_MESSAGE);
+            return false;
+        }finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al cerrar la conexión: \n" + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+    
+    public boolean usuarioExiste(String nombreUsuario) {
+    String sql = "SELECT COUNT(*) FROM usuarios WHERE username_usu = ?";
+    boolean existe = false;
+
+    try {
+        con = conectar.getConexion();
+        ps = con.prepareStatement(sql);
+        ps.setString(1, nombreUsuario);
+        rs = ps.executeQuery();
+
+        if (rs.next()) {
+            existe = rs.getInt(1) > 0;
+        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e.toString(), "Error al verificar el usuario \n" + e.getMessage(), JOptionPane.ERROR_MESSAGE);
+    } finally {
+        try {
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al cerrar la conexión: \n" + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    return existe;
+}
+
+
+    @Override
+    public boolean setActualizar(Usuario i) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public int setActualizar(Usuario i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public int setEliminar(int i) {
+    public boolean setEliminar(int i) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

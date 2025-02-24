@@ -4,6 +4,7 @@
  */
 package tiendaderopa.Vistas;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
@@ -31,9 +32,9 @@ public class NavBarSLC extends javax.swing.JPanel {
         navbar = new javax.swing.JPanel();
         zafiro = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
-        icon_usuario = new javax.swing.JLabel();
         nom_usuario = new javax.swing.JLabel();
-        icon_bolsa = new javax.swing.JLabel();
+        bolsa = new javax.swing.JButton();
+        conf_usuario = new javax.swing.JButton();
 
         navbar.setBackground(new java.awt.Color(0, 0, 51));
         navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -49,18 +50,28 @@ public class NavBarSLC extends javax.swing.JPanel {
         titulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         navbar.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, 80));
 
-        icon_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/avatar.png"))); // NOI18N
-        icon_usuario.setText("jLabel1");
-        navbar.add(icon_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 2, 30, 80));
-
         nom_usuario.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
         nom_usuario.setForeground(new java.awt.Color(255, 255, 255));
         nom_usuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nom_usuario.setText("Usuario");
-        navbar.add(nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 120, 80));
+        navbar.add(nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 0, 120, 80));
 
-        icon_bolsa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/bolsa-de-la-compra-blanca.png"))); // NOI18N
-        navbar.add(icon_bolsa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 2, -1, 80));
+        bolsa.setBackground(new java.awt.Color(0, 0, 51));
+        bolsa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/bolsa-de-la-compra-blanca.png"))); // NOI18N
+        bolsa.setBorder(null);
+        bolsa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bolsa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bolsaActionPerformed(evt);
+            }
+        });
+        navbar.add(bolsa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 20, 40, 40));
+
+        conf_usuario.setBackground(new java.awt.Color(0, 0, 51));
+        conf_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/avatar.png"))); // NOI18N
+        conf_usuario.setBorder(null);
+        conf_usuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        navbar.add(conf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 40, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -76,19 +87,36 @@ public class NavBarSLC extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bolsaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bolsaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel icon_bolsa;
-    private javax.swing.JLabel icon_usuario;
+    private javax.swing.JButton bolsa;
+    private javax.swing.JButton conf_usuario;
     private javax.swing.JPanel navbar;
     private javax.swing.JLabel nom_usuario;
     private javax.swing.JLabel titulo;
     private javax.swing.JLabel zafiro;
     // End of variables declaration//GEN-END:variables
 
-    public JLabel getIcin_bolsa() {
-        return icon_bolsa;
+    public JButton getBolsa() {
+        return bolsa;
     }
+
+    public JButton getConf_usuario() {
+        return conf_usuario;
+    }
+
+    public JLabel getNom_usuario() {
+        return nom_usuario;
+    }
+
+    public JLabel getTitulo() {
+        return titulo;
+    }
+
 
 
 }

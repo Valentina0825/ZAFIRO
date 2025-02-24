@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface Crud<I> {
      public List<I> listar();
-    public int setAgregar(I i);
-    public int setActualizar(I i);
-    public int setEliminar(int i);
+    public boolean setAgregar(I i);
+    public boolean setActualizar(I i);
+    public boolean setEliminar(int i);
 }

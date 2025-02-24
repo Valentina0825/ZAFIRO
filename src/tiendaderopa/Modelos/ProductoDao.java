@@ -68,18 +68,18 @@ public class ProductoDao implements Crud<Producto> {
     }
 
     @Override
-    public int setAgregar(Producto i) {
-        return 0;
+    public boolean setAgregar(Producto i) {
+        return false;
     }
 
     @Override
-    public int setActualizar(Producto i) {
-        return 0;
+    public boolean setActualizar(Producto i) {
+        return false;
     }
 
     @Override
-    public int setEliminar(int i) {
-        return 0;
+    public boolean setEliminar(int i) {
+        return false;
     }
     
 }

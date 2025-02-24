@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package tiendaderopa.Controladores;
 
 import java.awt.event.ActionEvent;
@@ -9,55 +5,55 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.JOptionPane;
 import tiendaderopa.Modelos.UsuarioDao;
 import tiendaderopa.Vistas.Login;
-import javax.swing.JOptionPane;
+import tiendaderopa.Vistas.HomeC;
+import tiendaderopa.TiendaDeRopa;
 
 /**
  *
- * @author valen
+ * @author Valentina
  */
-public class LoginCont implements ActionListener{
+public class LoginCont implements ActionListener {
 
     private Login vista;
     private JButton ingresar; 
     private UsuarioDao usuarioDao;
     private JTextField userName;
-    private String user;
     private JPasswordField contrasena;
-    private String pass;
-    private Boolean validacionIng;
-    
+
     public LoginCont(Login view) {
-        
         this.vista = view;
-        this.usuarioDao = new UsuarioDao(); //se me olvido agregarlo
-        
-        this.userName = vista.getNomUser() ;
-        this.user = userName.getText();
-        
-        this.contrasena = vista.getPass() ;
-        this.pass = String.valueOf(contrasena.getPassword());
-        
+        this.usuarioDao = new UsuarioDao();
+
         // Obteniendo botones desde la vista
-        this.ingresar = vista.getBtnIngresar(); 
-        this.ingresar.addActionListener(this);    
-        
+        this.ingresar = vista.getBtnIngresar();
+        this.ingresar.addActionListener(this);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ingresar) {
-            
-            this.validacionIng = usuarioDao.autenticarUsuario(user, pass);
-            if(validacionIng == true){
-                JOptionPane.showMessageDialog(null, "El usuario se encuentra registrado :D", "Usuario registrado" , JOptionPane.INFORMATION_MESSAGE);
-            }else{
-                JOptionPane.showMessageDialog(null, "El usuario /n" + user + "/n" + pass + "/n" +"NO esta registrado ;_;", "Usuario NO registrado" , JOptionPane.INFORMATION_MESSAGE);
-                
+            this.userName = vista.getNomUser();
+            this.contrasena = vista.getPass();
+
+            String user = userName.getText();
+            String pass = String.valueOf(contrasena.getPassword());
+
+            boolean validacionIng = usuarioDao.autenticarUsuario(user, pass);
+
+            if (validacionIng) {
+                // Cambiar la vista a HomeC y actualizar la barra de navegación
+                TiendaDeRopa.getInstancia().actualizarEstadoUsuario(true); // Indicar que está logueado
+                TiendaDeRopa.cambiarPanel(new HomeC());
+
+            } else {
+                JOptionPane.showMessageDialog(null, 
+                    "El usuario '" + user + "' NO está registrado.", 
+                    "Usuario NO registrado", 
+                    JOptionPane.INFORMATION_MESSAGE);
             }
-            
         }
-    
     }
 }

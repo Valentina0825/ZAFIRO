@@ -11,6 +11,7 @@ import tiendaderopa.Vistas.PanelProducto;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
@@ -21,6 +22,7 @@ public class ContenidoCont {
         
     private JPanel panelContenido;
     private ProductoDao productoDao;
+    private JButton detalle_prd;
     
     private ArrayList<Producto> listaProductos;
     
@@ -38,7 +40,11 @@ public class ContenidoCont {
 
         for (Producto producto : listaProductos) {
             PanelProducto panel = new PanelProducto(producto);
+            this.detalle_prd = panel.getBtn_detalle();
+            detalle_prd.addActionListener(e -> DetProductoCont.mostrarDetalle(producto));
+
             panelContenido.add(panel);
+            
         }
 
         panelContenido.revalidate();
@@ -48,4 +54,5 @@ public class ContenidoCont {
     
     
     
-}
+} 
+

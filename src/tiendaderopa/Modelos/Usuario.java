@@ -14,8 +14,19 @@ public class Usuario {
     private String nombre_usu;
     private String correo_usu;
     private String pass_usu;
-    private int rol_usu;
+    private int rolID_usu;
     private String username_usu;
+
+    public Usuario(String nombre_usu, String correo_usu, String pass_usu, int rolID_usu, String username_usu) {
+        this.nombre_usu = nombre_usu;
+        this.correo_usu = correo_usu;
+        this.pass_usu = pass_usu;
+        this.rolID_usu = rolID_usu;
+        this.username_usu = username_usu;
+    }
+
+    public Usuario() {
+    }
 
     public int getUsuario_id() {
         return usuario_id;
@@ -49,12 +60,12 @@ public class Usuario {
         this.pass_usu = pass_usu;
     }
 
-    public int getRol_usu() {
-        return rol_usu;
+    public int getrolID_usu() {
+        return rolID_usu;
     }
 
     public void setRol_usu(int rol_usu) {
-        this.rol_usu = rol_usu;
+        this.rolID_usu = rol_usu;
     }
 
     public String getUsername_usu() {
