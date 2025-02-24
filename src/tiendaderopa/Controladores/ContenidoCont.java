@@ -43,6 +43,7 @@ public class ContenidoCont {
 
         panelContenido.revalidate();
         panelContenido.repaint();
+        
     }
     
     

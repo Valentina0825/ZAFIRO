@@ -64,7 +64,7 @@ public class RegistroUsuario extends javax.swing.JPanel {
         inicio_S.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
         inicio_S.setForeground(new java.awt.Color(255, 255, 255));
         inicio_S.setText("REGISTRATE");
-        fondo_form.add(inicio_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, 60));
+        fondo_form.add(inicio_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, 50));
 
         tit_uc.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
         tit_uc.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,11 +95,11 @@ public class RegistroUsuario extends javax.swing.JPanel {
         tit_contra.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
         tit_contra.setForeground(new java.awt.Color(255, 255, 255));
         tit_contra.setText("Confirmar Contraseña");
-        fondo_form.add(tit_contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
+        fondo_form.add(tit_contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
 
         separadorC.setBackground(new java.awt.Color(153, 153, 153));
         separadorC.setForeground(new java.awt.Color(153, 153, 153));
-        fondo_form.add(separadorC, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, 570, 10));
+        fondo_form.add(separadorC, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 570, 10));
 
         contrasena.setBackground(new java.awt.Color(0, 0, 51));
         contrasena.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
@@ -112,7 +112,7 @@ public class RegistroUsuario extends javax.swing.JPanel {
                 contrasenaMousePressed(evt);
             }
         });
-        fondo_form.add(contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 570, 37));
+        fondo_form.add(contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 570, 37));
 
         alertaC1.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         alertaC1.setForeground(new java.awt.Color(0, 0, 51));
@@ -133,7 +133,7 @@ public class RegistroUsuario extends javax.swing.JPanel {
                 btn_ingresarMouseExited(evt);
             }
         });
-        fondo_form.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 150, 49));
+        fondo_form.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 150, 49));
 
         nom_corr1.setBackground(new java.awt.Color(0, 0, 51));
         nom_corr1.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
@@ -150,25 +150,25 @@ public class RegistroUsuario extends javax.swing.JPanel {
                 nom_corr1ActionPerformed(evt);
             }
         });
-        fondo_form.add(nom_corr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 570, 37));
+        fondo_form.add(nom_corr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 570, 37));
 
         separadorNC1.setBackground(new java.awt.Color(153, 153, 153));
         separadorNC1.setForeground(new java.awt.Color(153, 153, 153));
-        fondo_form.add(separadorNC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 570, -1));
+        fondo_form.add(separadorNC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 570, -1));
 
         tit_contra1.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
         tit_contra1.setForeground(new java.awt.Color(255, 255, 255));
         tit_contra1.setText("Correo Electronico");
-        fondo_form.add(tit_contra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+        fondo_form.add(tit_contra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
         tit_contra2.setFont(new java.awt.Font("Yu Gothic UI", 1, 22)); // NOI18N
         tit_contra2.setForeground(new java.awt.Color(255, 255, 255));
         tit_contra2.setText("Contraseña");
-        fondo_form.add(tit_contra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
+        fondo_form.add(tit_contra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
 
         separadorC1.setBackground(new java.awt.Color(153, 153, 153));
         separadorC1.setForeground(new java.awt.Color(153, 153, 153));
-        fondo_form.add(separadorC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 570, 10));
+        fondo_form.add(separadorC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 570, 10));
 
         contrasena1.setBackground(new java.awt.Color(0, 0, 51));
         contrasena1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
@@ -181,7 +181,7 @@ public class RegistroUsuario extends javax.swing.JPanel {
                 contrasena1MousePressed(evt);
             }
         });
-        fondo_form.add(contrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 570, 37));
+        fondo_form.add(contrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 570, 37));
 
         alertaC2.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         alertaC2.setForeground(new java.awt.Color(0, 0, 51));

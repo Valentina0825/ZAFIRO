@@ -52,7 +52,7 @@
                           <Component id="tit_uc" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="inicio_S" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="separadorNC" alignment="0" max="32767" attributes="0"/>
-                          <Component id="nom_corr" alignment="0" pref="570" max="32767" attributes="0"/>
+                          <Component id="nomUser" alignment="0" pref="570" max="32767" attributes="0"/>
                           <Component id="separadorC" alignment="0" max="32767" attributes="0"/>
                           <Component id="contrasena" alignment="0" max="32767" attributes="0"/>
                           <Component id="alertaC" alignment="0" max="32767" attributes="0"/>
@@ -73,7 +73,7 @@
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="tit_uc" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="nom_corr" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="nomUser" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="separadorNC" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -118,7 +118,7 @@
             <Property name="text" type="java.lang.String" value="USUARIO  "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nom_corr">
+        <Component class="javax.swing.JTextField" name="nomUser">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="0" type="rgb"/>
@@ -135,8 +135,8 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nom_corrMousePressed"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nom_corrActionPerformed"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nomUserMousePressed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomUserActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JSeparator" name="separadorNC">
@@ -244,6 +244,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ingresarMouseClicked"/>
             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ingresarMouseEntered"/>
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ingresarMouseExited"/>
           </Events>

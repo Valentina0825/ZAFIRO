@@ -50,13 +50,16 @@ public class BarNLCont implements ActionListener{
                     Login lg = new Login(); // Crear el objeto de Login para meter el panel en el jframe
                     loginFrame.add(lg); // Agregar el JPanel a la ventana
                     loginFrame.setVisible(true);
+                    //LoginCont controlador = new LoginCont(lg);
 
                     // Buscar la ventana padre y cerrarla si es JFrame
                     JFrame ventanaPadre = (JFrame) vista.getTopLevelAncestor();
                     if (ventanaPadre != null) {
                         ventanaPadre.dispose();
                     }
-        }if (e.getSource() == registrar) {
+        }
+        
+        if (e.getSource() == registrar) {
             JOptionPane.showMessageDialog(null, "¡Botón R presionado!");
         }
     } 

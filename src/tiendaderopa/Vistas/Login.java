@@ -5,6 +5,10 @@
 package tiendaderopa.Vistas;
 
 import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -31,7 +35,7 @@ public class Login extends javax.swing.JPanel {
         fondo_form = new javax.swing.JPanel();
         inicio_S = new javax.swing.JLabel();
         tit_uc = new javax.swing.JLabel();
-        nom_corr = new javax.swing.JTextField();
+        nomUser = new javax.swing.JTextField();
         separadorNC = new javax.swing.JSeparator();
         tit_contra = new javax.swing.JLabel();
         separadorC = new javax.swing.JSeparator();
@@ -62,19 +66,19 @@ public class Login extends javax.swing.JPanel {
         tit_uc.setForeground(new java.awt.Color(255, 255, 255));
         tit_uc.setText("USUARIO  ");
 
-        nom_corr.setBackground(new java.awt.Color(0, 0, 51));
-        nom_corr.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        nom_corr.setForeground(new java.awt.Color(153, 153, 153));
-        nom_corr.setText("Ingrese su nombre de usuario");
-        nom_corr.setBorder(null);
-        nom_corr.addMouseListener(new java.awt.event.MouseAdapter() {
+        nomUser.setBackground(new java.awt.Color(0, 0, 51));
+        nomUser.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        nomUser.setForeground(new java.awt.Color(153, 153, 153));
+        nomUser.setText("Ingrese su nombre de usuario");
+        nomUser.setBorder(null);
+        nomUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                nom_corrMousePressed(evt);
+                nomUserMousePressed(evt);
             }
         });
-        nom_corr.addActionListener(new java.awt.event.ActionListener() {
+        nomUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_corrActionPerformed(evt);
+                nomUserActionPerformed(evt);
             }
         });
 
@@ -119,6 +123,9 @@ public class Login extends javax.swing.JPanel {
         btn_ingresar.setBorder(null);
         btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ingresarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_ingresarMouseEntered(evt);
             }
@@ -139,7 +146,7 @@ public class Login extends javax.swing.JPanel {
                         .addComponent(tit_uc)
                         .addComponent(inicio_S)
                         .addComponent(separadorNC)
-                        .addComponent(nom_corr, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+                        .addComponent(nomUser, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
                         .addComponent(separadorC)
                         .addComponent(contrasena)
                         .addComponent(alertaC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -156,7 +163,7 @@ public class Login extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addComponent(tit_uc)
                 .addGap(18, 18, 18)
-                .addComponent(nom_corr, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomUser, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separadorNC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -185,15 +192,15 @@ public class Login extends javax.swing.JPanel {
         add(imagen_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, -160, 780, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nom_corrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_corrActionPerformed
+    private void nomUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nom_corrActionPerformed
+    }//GEN-LAST:event_nomUserActionPerformed
 
-    private void nom_corrMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nom_corrMousePressed
+    private void nomUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nomUserMousePressed
         // TODO add your handling code here:
-        if(nom_corr.getText().equals("Ingrese su nombre de usuario o correo electronico")){
-            nom_corr.setText("");
-            nom_corr.setForeground(Color.white);
+        if(nomUser.getText().equals("Ingrese su nombre de usuario o correo electronico")){
+            nomUser.setText("");
+            nomUser.setForeground(Color.white);
             separadorNC.setForeground(Color.white);
         }
         if(String.valueOf(contrasena.getPassword()).isEmpty()){
@@ -201,13 +208,13 @@ public class Login extends javax.swing.JPanel {
             contrasena.setForeground(Color.GRAY);
             separadorC.setForeground(Color.GRAY);
         }
-    }//GEN-LAST:event_nom_corrMousePressed
+    }//GEN-LAST:event_nomUserMousePressed
 
     private void contrasenaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contrasenaMousePressed
         // TODO add your handling code here:
-        if(nom_corr.getText().isEmpty()){
-            nom_corr.setText("Ingrese su nombre de usuario ");
-            nom_corr.setForeground(Color.GRAY);
+        if(nomUser.getText().isEmpty()){
+            nomUser.setText("Ingrese su nombre de usuario ");
+            nomUser.setForeground(Color.GRAY);
             separadorNC.setForeground(Color.GRAY);
         }
         if(String.valueOf(contrasena.getPassword()).equals("Ingrese su contraseña")){
@@ -231,6 +238,12 @@ public class Login extends javax.swing.JPanel {
         btn_ingresar.setBackground(new java.awt.Color(255,255,255)); // Color blanco
     }//GEN-LAST:event_btn_ingresarMouseExited
 
+    private void btn_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "El usuario \n" + nomUser.getText() + "\n" + String.valueOf(contrasena.getPassword()) + "\n" +"NO esta registrado ;_;", "Usuario NO registrado" , JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_btn_ingresarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel alertaC;
@@ -242,10 +255,22 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JLabel imagen_modelo;
     private javax.swing.JLabel inicio_S;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField nom_corr;
+    private javax.swing.JTextField nomUser;
     private javax.swing.JSeparator separadorC;
     private javax.swing.JSeparator separadorNC;
     private javax.swing.JLabel tit_contra;
     private javax.swing.JLabel tit_uc;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnIngresar(){
+            return btn_ingresar;
+    }
+    
+    public JTextField getNomUser(){
+        return nomUser;
+    }
+    
+    public JPasswordField getPass(){
+        return contrasena;
+    }
 }
