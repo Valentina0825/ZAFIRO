@@ -4,28 +4,32 @@
  */
 package tiendaderopa.Vistas;
 
+import javax.swing.JButton;
+import tiendaderopa.Controladores.BolsaCont;
 import tiendaderopa.Modelos.Producto;
 
 /**
  *
  * @author josep
  */
-public class DetalleProducto extends javax.swing.JPanel {
+public class PanelDetalleProducto extends javax.swing.JPanel {
+    
     private Producto produc;
     /**
      * Creates new form Producto
      */
-    public DetalleProducto(Producto producto) {
+    public PanelDetalleProducto(Producto producto) {
         this.produc = producto;
         initComponents();
         
-        nom_producto.setText(producto.getNombre_prod());
-        precio.setText("$" + producto.getPrecio_prod());
-        descripcion_prod.setText("<html>" + producto.getDescipcion_prod() + "</html>");
+        nom_producto.setText(produc.getNombre_prod());
+        precio.setText("$" + produc.getPrecio_prod());
+        descripcion_prod.setText("<html>" + produc.getDescipcion_prod() + "</html>");
         
-        if (producto.getImg_prod() != null) {
+        if (produc.getImg_prod() != null) {
             img_prod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/imgs_productos/" + producto.getImg_prod())));
         }
+        
     }
 
     /**
@@ -43,10 +47,10 @@ public class DetalleProducto extends javax.swing.JPanel {
         descripcion_prod = new javax.swing.JLabel();
         btn_agregarBolsa = new javax.swing.JButton();
         btn_comprar = new javax.swing.JButton();
-        tit_talla = new javax.swing.JLabel();
         nom_producto = new javax.swing.JLabel();
         pnl_tallas = new javax.swing.JPanel();
         img_prod = new javax.swing.JLabel();
+        tit_talla = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,8 +63,9 @@ public class DetalleProducto extends javax.swing.JPanel {
         precio.setText("$ 30.000");
         jPanel1.add(precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, -1, -1));
 
+        descripcion_prod.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         descripcion_prod.setText("<html>Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de \"Lorem Ipsum\" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).</html>");
-        jPanel1.add(descripcion_prod, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 620, 130));
+        jPanel1.add(descripcion_prod, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 620, 140));
 
         btn_agregarBolsa.setBackground(new java.awt.Color(0, 0, 51));
         btn_agregarBolsa.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
@@ -73,42 +78,43 @@ public class DetalleProducto extends javax.swing.JPanel {
                 btn_agregarBolsaActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_agregarBolsa, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 230, 50));
+        jPanel1.add(btn_agregarBolsa, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 280, 50));
 
         btn_comprar.setBackground(new java.awt.Color(0, 0, 51));
         btn_comprar.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         btn_comprar.setForeground(new java.awt.Color(255, 255, 255));
         btn_comprar.setText("COMPRAR");
-        btn_comprar.setActionCommand("COMPRAR");
-        jPanel1.add(btn_comprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 450, 180, 50));
-
-        tit_talla.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        tit_talla.setForeground(new java.awt.Color(0, 0, 51));
-        tit_talla.setText("Talla");
-        jPanel1.add(tit_talla, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, -1, -1));
+        jPanel1.add(btn_comprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 440, 180, 50));
 
         nom_producto.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
         nom_producto.setForeground(new java.awt.Color(0, 0, 51));
         nom_producto.setText("Nombre Producto");
         jPanel1.add(nom_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
 
+        pnl_tallas.setBackground(new java.awt.Color(204, 204, 204));
+
         javax.swing.GroupLayout pnl_tallasLayout = new javax.swing.GroupLayout(pnl_tallas);
         pnl_tallas.setLayout(pnl_tallasLayout);
         pnl_tallasLayout.setHorizontalGroup(
             pnl_tallasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
         );
         pnl_tallasLayout.setVerticalGroup(
             pnl_tallasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        jPanel1.add(pnl_tallas, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 310, -1));
+        jPanel1.add(pnl_tallas, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 430, 60));
 
         img_prod.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.add(img_prod, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 340, 460));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 1250, 530));
+        tit_talla.setFont(new java.awt.Font("Sylfaen", 1, 20)); // NOI18N
+        tit_talla.setForeground(new java.awt.Color(0, 0, 51));
+        tit_talla.setText("Talla");
+        jPanel1.add(tit_talla, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, -1, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1200, 500));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_agregarBolsaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarBolsaActionPerformed
@@ -128,4 +134,18 @@ public class DetalleProducto extends javax.swing.JPanel {
     private javax.swing.JLabel precio;
     private javax.swing.JLabel tit_talla;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtn_agregarBolsa() {
+        return btn_agregarBolsa;
+    }
+
+    public Producto getProduc() {
+        return produc;
+    }
+
+    public JButton getBtn_comprar() {
+        return btn_comprar;
+    }
+    
+
 }

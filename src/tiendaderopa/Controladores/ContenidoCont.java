@@ -36,12 +36,12 @@ public class ContenidoCont {
     
     private void cargarProductos() {
         List<Producto> listaProductos = productoDao.listar();
-        panelContenido.setLayout(new GridLayout(0, 4, 20, 20)); // 4 columnas, espacio de 10px
+        panelContenido.setLayout(new GridLayout(0, 4, 20, 20)); // 4 columnas, espacio de 20px
 
         for (Producto producto : listaProductos) {
             PanelProducto panel = new PanelProducto(producto);
             this.detalle_prd = panel.getBtn_detalle();
-            detalle_prd.addActionListener(e -> DetProductoCont.mostrarDetalle(producto));
+            detalle_prd.addActionListener(e -> PestProductoCont.mostrarDetalle(producto));
 
             panelContenido.add(panel);
             

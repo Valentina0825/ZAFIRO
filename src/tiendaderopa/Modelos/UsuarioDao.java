@@ -25,7 +25,7 @@ public class UsuarioDao implements Crud<Usuario>{
     @Override
     public List listar() {
         List<Usuario> datosUsrs = new ArrayList<>();
-        String sql = "SELECT * FROM usuario";
+        String sql = "SELECT u.* , r.nombre_rol FROM usuarios u JOIN roles r ON u.rol_id = r.rol_id;";
         try {
             con = conectar.getConexion();
             ps = con.prepareStatement(sql);
@@ -37,7 +37,9 @@ public class UsuarioDao implements Crud<Usuario>{
                 usu.setNombre_usu(rs.getString(2));
                 usu.setCorreo_usu(rs.getString(3));
                 usu.setPass_usu(rs.getString(4));
-                usu.setUsername_usu(rs.getString(5));
+                usu.setRolID_usu(rs.getInt(5));
+                usu.setUsername_usu(rs.getString(6));
+                usu.setNom_rol(rs.getString(7));
                 datosUsrs.add(usu);
             }
         } catch (Exception e) {
@@ -66,6 +68,7 @@ public class UsuarioDao implements Crud<Usuario>{
         try {
             con = conectar.getConexion();
             ps = con.prepareStatement(sql);
+            
             ps.setString(1, username);
             ps.setString(2, password);
             rs = ps.executeQuery();
@@ -90,6 +93,47 @@ public class UsuarioDao implements Crud<Usuario>{
             }
         }
     }
+    
+    public Usuario cargarUsuario(String username) {
+        String sql = "SELECT u.* , r.nombre_rol FROM usuarios u JOIN roles r ON u.rol_id = r.rol_id WHERE username_usu = ? ;";
+        Usuario user = null;
+        try {
+            con = conectar.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, username); // Asignar el parámetro
+            rs = ps.executeQuery();
+            
+            if (rs.next()) { // Debe verificarse si hay resultados antes de acceder a ellos
+                user = new Usuario();
+                user.setUsuario_id(rs.getInt(1));
+                user.setNombre_usu(rs.getString(2));
+                user.setCorreo_usu(rs.getString(3));
+                user.setPass_usu(rs.getString(4));
+                user.setRolID_usu(rs.getInt(5));
+                user.setUsername_usu(rs.getString(6));
+                user.setNom_rol(rs.getString(7));
+            }else {
+                System.out.println("Usuario no encontrado: " + username); // Mensaje de depuración
+            }
+            return user;
+        }  catch (Exception e) {
+            
+            JOptionPane.showMessageDialog(null, e.toString(), "Error al realizar la consulta" + e.getMessage(), JOptionPane.ERROR_MESSAGE);
+        
+        }finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al cerrar la conexión: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        return user;
+    }
 
     @Override
     public boolean setAgregar(Usuario u) {
@@ -101,7 +145,7 @@ public class UsuarioDao implements Crud<Usuario>{
             ps.setString(1, u.getNombre_usu());
             ps.setString(2, u.getCorreo_usu());
             ps.setString(3, u.getPass_usu());
-            ps.setInt(4, u.getrolID_usu());
+            ps.setInt(4, u.getRolID_usu());
             ps.setString(5, u.getUsername_usu());
 
 

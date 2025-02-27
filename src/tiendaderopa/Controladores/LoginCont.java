@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
+import tiendaderopa.Modelos.Usuario;
 import tiendaderopa.Modelos.UsuarioDao;
 import tiendaderopa.Vistas.Login;
 import tiendaderopa.Vistas.HomeC;
@@ -22,6 +23,7 @@ public class LoginCont implements ActionListener {
     private UsuarioDao usuarioDao;
     private JTextField userName;
     private JPasswordField contrasena;
+    public Usuario usuario = new Usuario();
 
     public LoginCont(Login view) {
         this.vista = view;
@@ -44,8 +46,20 @@ public class LoginCont implements ActionListener {
             boolean validacionIng = usuarioDao.autenticarUsuario(user, pass);
 
             if (validacionIng) {
+                
+                usuario = usuarioDao.cargarUsuario(user);
+                
+                if (usuario == null) {
+                    JOptionPane.showMessageDialog(null, "Error: No se pudo cargar el usuario", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                // Verificar que se está obteniendo un usuario con datos correctos
+                System.out.println("Usuario autenticado: " + usuario.getUsername_usu());
+                
                 // Cambiar la vista a HomeC y actualizar la barra de navegación
-                TiendaDeRopa.getInstancia().actualizarEstadoUsuario(true); // Indicar que está logueado
+                TiendaDeRopa.getInstancia().actualizarEstadoUsuario(true, usuario); // Indicar que está logueado
+                
                 TiendaDeRopa.cambiarPanel(new HomeC());
 
             } else {

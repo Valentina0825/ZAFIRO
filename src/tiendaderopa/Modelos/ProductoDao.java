@@ -24,9 +24,8 @@ public class ProductoDao implements Crud<Producto> {
     public List<Producto> listar() {
         List<Producto> datosProds = new ArrayList<>();
         String sql = 
-                "SELECT p.* , t.nombre_tall , c.nombre_cat "
-              + "FROM productos p JOIN tallas t ON p.id_talla = t.talla_id "
-              + "JOIN categorias c ON p.id_categoria = c.categoria_id; ";
+                "SELECT p.* , c.nombre_cat "
+              + "FROM productos_genrales p JOIN categorias c ON p.id_categoria = c.categoria_id; ";
         
         try {
             con = conectar.getConexion();
@@ -39,11 +38,10 @@ public class ProductoDao implements Crud<Producto> {
                 prod.setProducto_id(rs.getInt(1));
                 prod.setNombre_prod(rs.getString(2));
                 prod.setDescipcion_prod(rs.getString(3));
-                prod.setCantidad_prod(rs.getInt(4));
-                prod.setPrecio_prod(rs.getInt(5));
-                prod.setId_talla(rs.getInt(6));
-                prod.setImg_prod(rs.getString(7));
-                prod.setCategoria_prod(rs.getInt(8));
+                prod.setPrecio_prod(rs.getInt(4));
+                prod.setImg_prod(rs.getString(5));
+                prod.setCategoria_prod(rs.getInt(6));
+                prod.setNom_cat(rs.getString(7));
                 
                datosProds.add(prod);
             }
@@ -66,6 +64,8 @@ public class ProductoDao implements Crud<Producto> {
         return datosProds;
     
     }
+    
+    
 
     @Override
     public boolean setAgregar(Producto i) {

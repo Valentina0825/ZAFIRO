@@ -2,6 +2,7 @@ package tiendaderopa.Controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.regex.Pattern;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -64,6 +65,11 @@ public class RegistroCont implements ActionListener {
                 JOptionPane.showMessageDialog(vista, "Las contraseñas no coinciden.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+
+            if (!esContrasenaSegura(pass)) {
+                JOptionPane.showMessageDialog(vista, "La contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un carácter especial.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             
             if (!email.matches("^[\\w.-]+@[a-zA-Z\\d.-]+\\.[a-zA-Z]{2,}$")) {
                 JOptionPane.showMessageDialog(vista, "Correo electrónico inválido.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -76,17 +82,25 @@ public class RegistroCont implements ActionListener {
             }
             
             // Crear usuario y registrarlo
-            Usuario usuario = new Usuario(nomComp, email, pass, 1, nomUser);
+            Usuario usuario = new Usuario(nomComp, email, pass, 1, nomUser,"Cliente");
             boolean validacionReg = usuarioDao.setAgregar(usuario);
             
             if (validacionReg) {
                 JOptionPane.showMessageDialog(vista, "Usuario registrado con éxito!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                 
                 // Cambiar a la vista de login
-                TiendaDeRopa.cambiarPanel(new Login());
+                Login lg = new Login();
+                new LoginCont(lg);
+                TiendaDeRopa.cambiarPanel(lg);
+                
             } else {
                 JOptionPane.showMessageDialog(vista, "Error al registrar el usuario.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
+    }
+
+    private boolean esContrasenaSegura(String contrasena) {
+        String regex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!¡¿?*.,;:<>]).{8,}$";
+        return Pattern.matches(regex, contrasena);
     }
 }

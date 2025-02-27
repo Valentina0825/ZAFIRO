@@ -48,7 +48,7 @@ public class HomeC extends JPanel {
         contenido.setLayout(contenidoLayout);
         contenidoLayout.setHorizontalGroup(
             contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 539, Short.MAX_VALUE)
+            .addGap(0, 1250, Short.MAX_VALUE)
         );
         contenidoLayout.setVerticalGroup(
             contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -57,7 +57,7 @@ public class HomeC extends JPanel {
 
         jScrollPane1.setViewportView(contenido);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 90, 1280, 540));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 1260, 540));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -67,7 +67,7 @@ public class HomeC extends JPanel {
     
     private void generarPagina(){
         
-        jScrollPane1.setViewportBorder(new EmptyBorder(20, 20, 20, 20));
+        //jScrollPane1.setViewportBorder(new EmptyBorder(20, 20, 20, 20));
         revalidate();
         repaint();
    

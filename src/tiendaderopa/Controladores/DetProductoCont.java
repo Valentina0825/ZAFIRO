@@ -4,23 +4,41 @@
  */
 package tiendaderopa.Controladores;
 
-import javax.swing.JFrame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import tiendaderopa.Modelos.Producto;
-import tiendaderopa.TiendaDeRopa;
-import tiendaderopa.Vistas.DetalleProducto;
-import tiendaderopa.Vistas.HomeC;
+import tiendaderopa.Vistas.PanelDetalleProducto;
+import tiendaderopa.Vistas.ProductoBolsa;
 
 /**
  *
  * @author valen
  */
-public class DetProductoCont {
+public class DetProductoCont implements ActionListener{
     
-    
-    public static void mostrarDetalle(Producto producto) {
-        DetalleProducto vistaDetalle = new DetalleProducto(producto);
+    private PanelDetalleProducto vista;
+    private Producto producto;
+    private JButton agregarBolsa;
+    private JButton comprar;
+
+    public DetProductoCont(PanelDetalleProducto vistaDetalle) {
+        this.vista = vistaDetalle;
+        this.agregarBolsa = vista.getBtn_agregarBolsa() ;
+        this.agregarBolsa.addActionListener(this); 
         
-        TiendaDeRopa.cambiarPanel(vistaDetalle);
     }
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == agregarBolsa) {
+            this.producto = this.vista.getProduc();
+            ProductoBolsa platillaProdBolsa = new ProductoBolsa(producto);
+            BolsaCont contPlantPBolsa = new BolsaCont();
+            contPlantPBolsa.agregarProducto(platillaProdBolsa);
+        }
+    }
+    
+    
     
 }

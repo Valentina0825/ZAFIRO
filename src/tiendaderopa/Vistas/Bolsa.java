@@ -6,8 +6,10 @@ package tiendaderopa.Vistas;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import tiendaderopa.Modelos.Producto;
 
 /**
  *
@@ -19,6 +21,7 @@ public class Bolsa extends javax.swing.JPanel {
      * Creates new form Bolsa
      */
     public Bolsa() {
+        
         initComponents();
         opcionesPago.add(trj_credito);
         opcionesPago.add(trj_debito);
@@ -36,7 +39,7 @@ public class Bolsa extends javax.swing.JPanel {
 
         opcionesPago = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
+        contProdsSelect = new javax.swing.JPanel();
         pnl_direccion = new tiendaderopa.Vistas.PanelRound();
         codigo_post = new javax.swing.JTextField();
         separadorCP = new javax.swing.JSeparator();
@@ -45,7 +48,6 @@ public class Bolsa extends javax.swing.JPanel {
         complemento = new javax.swing.JTextField();
         separadorCom = new javax.swing.JSeparator();
         tit_direccion = new javax.swing.JLabel();
-        check_dir = new javax.swing.JButton();
         panel_pago = new tiendaderopa.Vistas.PanelRound();
         tit_direccion1 = new javax.swing.JLabel();
         tit_direccion2 = new javax.swing.JLabel();
@@ -59,22 +61,22 @@ public class Bolsa extends javax.swing.JPanel {
 
         jScrollPane1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        contProdsSelect.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout contProdsSelectLayout = new javax.swing.GroupLayout(contProdsSelect);
+        contProdsSelect.setLayout(contProdsSelectLayout);
+        contProdsSelectLayout.setHorizontalGroup(
+            contProdsSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 660, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        contProdsSelectLayout.setVerticalGroup(
+            contProdsSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jScrollPane1.setViewportView(jPanel1);
+        jScrollPane1.setViewportView(contProdsSelect);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 680, 530));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 680, 530));
 
         pnl_direccion.setBackground(new java.awt.Color(204, 204, 204));
         pnl_direccion.setRoundBottomLeft(40);
@@ -143,11 +145,6 @@ public class Bolsa extends javax.swing.JPanel {
         tit_direccion.setForeground(new java.awt.Color(0, 0, 51));
         tit_direccion.setText("Direccion de envio");
 
-        check_dir.setBackground(new java.awt.Color(0, 0, 51));
-        check_dir.setFont(new java.awt.Font("Yu Gothic", 0, 12)); // NOI18N
-        check_dir.setForeground(new java.awt.Color(255, 255, 255));
-        check_dir.setBorder(null);
-
         javax.swing.GroupLayout pnl_direccionLayout = new javax.swing.GroupLayout(pnl_direccion);
         pnl_direccion.setLayout(pnl_direccionLayout);
         pnl_direccionLayout.setHorizontalGroup(
@@ -162,8 +159,7 @@ public class Bolsa extends javax.swing.JPanel {
                         .addComponent(separadorCP)
                         .addComponent(codigo_post, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
                         .addComponent(direccion)
-                        .addComponent(complemento))
-                    .addComponent(check_dir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(complemento)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         pnl_direccionLayout.setVerticalGroup(
@@ -183,12 +179,10 @@ public class Bolsa extends javax.swing.JPanel {
                 .addComponent(complemento, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separadorCom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(check_dir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(55, 55, 55))
         );
 
-        add(pnl_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 530, 240));
+        add(pnl_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 530, 240));
 
         panel_pago.setBackground(new java.awt.Color(204, 204, 204));
         panel_pago.setRoundBottomLeft(40);
@@ -284,7 +278,7 @@ public class Bolsa extends javax.swing.JPanel {
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
-        add(panel_pago, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 350, 530, 280));
+        add(panel_pago, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, 530, 280));
     }// </editor-fold>//GEN-END:initComponents
 
     private void codigo_postMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_codigo_postMousePressed
@@ -326,13 +320,12 @@ public class Bolsa extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton check_dir;
     private javax.swing.JTextField codigo_post;
     private javax.swing.JTextField complemento;
     private javax.swing.JRadioButton consignacion;
+    private javax.swing.JPanel contProdsSelect;
     private javax.swing.JTextField direccion;
     private javax.swing.JButton jButton1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.ButtonGroup opcionesPago;
     private tiendaderopa.Vistas.PanelRound panel_pago;
@@ -348,9 +341,6 @@ public class Bolsa extends javax.swing.JPanel {
     private javax.swing.JRadioButton trj_debito;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getCheck_dir() {
-        return check_dir;
-    }
 
     public JTextField getCodigo_post() {
         return codigo_post;
@@ -380,6 +370,11 @@ public class Bolsa extends javax.swing.JPanel {
         return trj_debito;
     }
 
+    public JPanel getContProdsSelect() {
+        return contProdsSelect;
+    }
+
+    
 
 
 }

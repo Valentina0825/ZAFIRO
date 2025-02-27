@@ -29,73 +29,49 @@ public class NavBarSLC extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        navbar = new javax.swing.JPanel();
         zafiro = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
-        nom_usuario = new javax.swing.JLabel();
         bolsa = new javax.swing.JButton();
+        nom_usuario = new javax.swing.JLabel();
         conf_usuario = new javax.swing.JButton();
 
-        navbar.setBackground(new java.awt.Color(0, 0, 51));
-        navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(0, 0, 51));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         zafiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/zafiro_50.jpg"))); // NOI18N
         zafiro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        navbar.add(zafiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 80));
+        add(zafiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 80));
 
         titulo.setFont(new java.awt.Font("Sylfaen", 0, 45)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titulo.setText("B  I  E  N  V  E  N  I  D  O");
         titulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        navbar.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, 80));
-
-        nom_usuario.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        nom_usuario.setForeground(new java.awt.Color(255, 255, 255));
-        nom_usuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        nom_usuario.setText("Usuario");
-        navbar.add(nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 0, 120, 80));
+        add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, 80));
 
         bolsa.setBackground(new java.awt.Color(0, 0, 51));
         bolsa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/bolsa-de-la-compra-blanca.png"))); // NOI18N
         bolsa.setBorder(null);
         bolsa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bolsa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bolsaActionPerformed(evt);
-            }
-        });
-        navbar.add(bolsa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 20, 40, 40));
+        add(bolsa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 20, 40, 40));
+
+        nom_usuario.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        nom_usuario.setForeground(new java.awt.Color(255, 255, 255));
+        nom_usuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        nom_usuario.setText("Usuario");
+        add(nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 0, 120, 80));
 
         conf_usuario.setBackground(new java.awt.Color(0, 0, 51));
         conf_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/avatar.png"))); // NOI18N
         conf_usuario.setBorder(null);
         conf_usuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        navbar.add(conf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 40, 40));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, 1290, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        add(conf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 40, 40));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bolsaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolsaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bolsaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bolsa;
     private javax.swing.JButton conf_usuario;
-    private javax.swing.JPanel navbar;
     private javax.swing.JLabel nom_usuario;
     private javax.swing.JLabel titulo;
     private javax.swing.JLabel zafiro;

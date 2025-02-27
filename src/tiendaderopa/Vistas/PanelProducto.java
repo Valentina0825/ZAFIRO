@@ -7,7 +7,7 @@ package tiendaderopa.Vistas;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import tiendaderopa.Controladores.DetProductoCont;
+import tiendaderopa.Controladores.PestProductoCont;
 import tiendaderopa.Modelos.Producto;
 
 /**
@@ -23,12 +23,12 @@ public class PanelProducto extends javax.swing.JPanel {
     public PanelProducto(Producto producto) {
         this.produc = producto;
         initComponents();
-        nom_producto.setText(producto.getNombre_prod());
-        precio.setText("$" + producto.getPrecio_prod());
+        nom_producto.setText(produc.getNombre_prod());
+        precio.setText("$" + produc.getPrecio_prod());
 
         // Cargar imagen desde la ruta
-        if (producto.getImg_prod() != null && !producto.getImg_prod().isEmpty()) {
-            img_icon.setIcon(new ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/imgs_productos/" + producto.getImg_prod())));
+        if (produc.getImg_prod() != null && !produc.getImg_prod().isEmpty()) {
+            img_icon.setIcon(new ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/imgs_productos/" + produc.getImg_prod())));
         }
     }
 
@@ -105,12 +105,11 @@ public class PanelProducto extends javax.swing.JPanel {
                         .addComponent(btn_detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnl_productoLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(nom_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(nom_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_productoLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(img_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_productoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(img_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
         );
         pnl_productoLayout.setVerticalGroup(
             pnl_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +134,7 @@ public class PanelProducto extends javax.swing.JPanel {
 
     private void btn_detalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_detalleActionPerformed
         // TODO add your handling code here:
-        DetProductoCont.mostrarDetalle(produc);
+        //DetProductoCont.mostrarDetalle(produc);
     }//GEN-LAST:event_btn_detalleActionPerformed
 
     private void btn_detalleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_detalleMouseEntered
