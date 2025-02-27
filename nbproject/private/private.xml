@@ -3,16 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Controladores/DetProductoCont.java</file>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/Bolsa.java</file>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/PanelDetalleProducto.java</file>
+            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/NavBarNL.java</file>
+            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Controladores/LoginCont.java</file>
             <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/NavBarSLC.java</file>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Controladores/ContenidoCont.java</file>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Controladores/BolsaCont.java</file>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/PanelProducto.java</file>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Controladores/PestProductoCont.java</file>
+            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/HomeV.java</file>
+            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/Login.java</file>
+            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Controladores/RegistroCont.java</file>
             <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Controladores/BarSLCont.java</file>
-            <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Vistas/ProductoBolsa.java</file>
             <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/TiendaDeRopa.java</file>
             <file>file:/C:/Users/valen/OneDrive/Documentos/NetBeansProjects/TiendaDeRopa/src/tiendaderopa/Controladores/BarNLCont.java</file>
         </group>

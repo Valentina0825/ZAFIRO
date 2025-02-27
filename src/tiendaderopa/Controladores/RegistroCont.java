@@ -100,7 +100,7 @@ public class RegistroCont implements ActionListener {
     }
 
     private boolean esContrasenaSegura(String contrasena) {
-        String regex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!¡¿?*.,;:<>]).{8,}$";
+        String regex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=_!¡¿?*.,;:<>]).{8,}$";
         return Pattern.matches(regex, contrasena);
     }
 }

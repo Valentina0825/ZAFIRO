@@ -32,7 +32,7 @@ public class NavBarNL extends javax.swing.JPanel {
         btn_registrar = new javax.swing.JButton();
         btn_ingresar = new javax.swing.JButton();
         titulo = new javax.swing.JLabel();
-        zafiro = new javax.swing.JLabel();
+        zafiro_home = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 0, 51));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,17 +58,33 @@ public class NavBarNL extends javax.swing.JPanel {
         titulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, 80));
 
-        zafiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/zafiro_50.jpg"))); // NOI18N
-        zafiro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add(zafiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 80));
+        zafiro_home.setBackground(new java.awt.Color(245, 245, 245));
+        zafiro_home.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        zafiro_home.setForeground(new java.awt.Color(0, 0, 51));
+        zafiro_home.setText("Z A F I R O");
+        zafiro_home.setActionCommand("Z A F I R O");
+        zafiro_home.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 51))); // NOI18N
+        zafiro_home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        zafiro_home.setVerifyInputWhenFocusTarget(false);
+        zafiro_home.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        zafiro_home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zafiro_homeActionPerformed(evt);
+            }
+        });
+        add(zafiro_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 40));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void zafiro_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zafiro_homeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_zafiro_homeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_ingresar;
     private javax.swing.JButton btn_registrar;
     private javax.swing.JLabel titulo;
-    private javax.swing.JLabel zafiro;
+    private javax.swing.JButton zafiro_home;
     // End of variables declaration//GEN-END:variables
 
     
@@ -78,6 +94,10 @@ public class NavBarNL extends javax.swing.JPanel {
     
     public JButton getBtnRegistrar(){
         return btn_registrar;
+    }
+
+    public JButton getZafiroHome() {
+        return zafiro_home;
     }
     
 }

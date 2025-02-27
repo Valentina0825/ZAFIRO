@@ -11,6 +11,8 @@ import tiendaderopa.Modelos.UsuarioDao;
 import tiendaderopa.Vistas.Login;
 import tiendaderopa.Vistas.HomeC;
 import tiendaderopa.TiendaDeRopa;
+import static tiendaderopa.TiendaDeRopa.cambiarPanel;
+import tiendaderopa.Vistas.HomeV;
 
 /**
  *
@@ -24,6 +26,7 @@ public class LoginCont implements ActionListener {
     private JTextField userName;
     private JPasswordField contrasena;
     public Usuario usuario = new Usuario();
+    private int idRol;
 
     public LoginCont(Login view) {
         this.vista = view;
@@ -59,8 +62,34 @@ public class LoginCont implements ActionListener {
                 
                 // Cambiar la vista a HomeC y actualizar la barra de navegación
                 TiendaDeRopa.getInstancia().actualizarEstadoUsuario(true, usuario); // Indicar que está logueado
-                
-                TiendaDeRopa.cambiarPanel(new HomeC());
+                this.idRol = usuario.getRolID_usu();
+                // Cambiar la vista según el rol
+                switch (idRol) {
+                    case 1:
+                        System.out.println("Cargando vista para Cliente..." );
+                        TiendaDeRopa.cambiarPanel(new HomeC()); // Si tienes una vista para clientes
+                        break;
+                    case 2:
+                        System.out.println("Cargando vista para Vendedor...");
+                        // Reemplaza la vista actual con el home de vendedor
+                        HomeV hV = new HomeV();
+                        new HomeVCont(hV);
+                        TiendaDeRopa.cambiarPanel(hV);
+                        
+                        break;
+                    case 3:
+                        System.out.println("Cargando vista para Administrador...");
+                        // cambiarPanel(new HomeAdmin()); // Si tienes una vista para admin
+                        break;
+                    case 4:
+                        System.out.println("Cargando vista para Cliente...");
+                        // cambiarPanel(new HomeCliente()); // Si tienes una vista para clientes
+                        break;
+                    default:
+                        System.out.println("Rol no reconocido, mostrando vista por defecto...");
+                        TiendaDeRopa.cambiarPanel(new HomeC());
+                        break;
+                }
 
             } else {
                 JOptionPane.showMessageDialog(null, 

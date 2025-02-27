@@ -29,18 +29,14 @@ public class NavBarSLC extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        zafiro = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
         bolsa = new javax.swing.JButton();
         nom_usuario = new javax.swing.JLabel();
         conf_usuario = new javax.swing.JButton();
+        zafiro_home = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 0, 51));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        zafiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tiendaderopa/Vistas/imagenes/zafiro_50.jpg"))); // NOI18N
-        zafiro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add(zafiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 80));
 
         titulo.setFont(new java.awt.Font("Sylfaen", 0, 45)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -66,7 +62,26 @@ public class NavBarSLC extends javax.swing.JPanel {
         conf_usuario.setBorder(null);
         conf_usuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(conf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 40, 40));
+
+        zafiro_home.setBackground(new java.awt.Color(245, 245, 245));
+        zafiro_home.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        zafiro_home.setForeground(new java.awt.Color(0, 0, 51));
+        zafiro_home.setText("Z A F I R O");
+        zafiro_home.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 51))); // NOI18N
+        zafiro_home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        zafiro_home.setVerifyInputWhenFocusTarget(false);
+        zafiro_home.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        zafiro_home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zafiro_homeActionPerformed(evt);
+            }
+        });
+        add(zafiro_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 40));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void zafiro_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zafiro_homeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_zafiro_homeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -74,7 +89,7 @@ public class NavBarSLC extends javax.swing.JPanel {
     private javax.swing.JButton conf_usuario;
     private javax.swing.JLabel nom_usuario;
     private javax.swing.JLabel titulo;
-    private javax.swing.JLabel zafiro;
+    private javax.swing.JButton zafiro_home;
     // End of variables declaration//GEN-END:variables
 
     public JButton getBolsa() {
@@ -92,6 +107,11 @@ public class NavBarSLC extends javax.swing.JPanel {
     public JLabel getTitulo() {
         return titulo;
     }
+
+    public JButton getZafiro_home() {
+        return zafiro_home;
+    }
+    
 
 
 

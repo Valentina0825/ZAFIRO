@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import tiendaderopa.Modelos.Usuario;
 import tiendaderopa.TiendaDeRopa;
 import tiendaderopa.Vistas.Bolsa;
+import tiendaderopa.Vistas.HomeC;
 import tiendaderopa.Vistas.NavBarSLC;
 
 
@@ -21,7 +22,7 @@ import tiendaderopa.Vistas.NavBarSLC;
 public class BarSLCont implements ActionListener{
     
     private NavBarSLC vista;
-    private JButton bolsa;
+    private JButton bolsa , zafHome;
     private Usuario user;
     private JLabel userLog;
 //    private JButton registrar;
@@ -33,7 +34,10 @@ public class BarSLCont implements ActionListener{
 
         // Obteniendo botones desde la vista
         this.bolsa = vista.getBolsa();
+        this.zafHome = vista.getZafiro_home();
+        
         this.bolsa.addActionListener(this);
+        this.zafHome.addActionListener(this);
         
         this.userLog = vista.getNom_usuario();
         
@@ -53,16 +57,23 @@ public class BarSLCont implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-         if (e.getSource() == bolsa) {
+        if (e.getSource() == bolsa) {
             abrirBolsa();
+        }else if (e.getSource() == zafHome){
+            abrirHome();
         }
     }
     
     
     private void abrirBolsa() {
         Bolsa bolsa = new Bolsa();
-//        new LoginCont(lg);
+//        new (lg);
         TiendaDeRopa.cambiarPanel(bolsa); // Reemplaza la vista actual con la bolsa
+    }
+    
+     private void abrirHome() {
+        HomeC homeC = new HomeC();
+        TiendaDeRopa.cambiarPanel(homeC); // Reemplaza la vista actual con la bolsa
     }
     
 }
